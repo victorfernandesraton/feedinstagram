@@ -1,32 +1,23 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, FlatList, TextInput } from "react-native";
+import { FlatList } from "react-native";
 import axios from "axios";
-import LazyImage from "../../components/LazyImage";
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 
 import {
-	Avatar,
-	BasicText,
 	Container,
-	Description,
-	Header,
 	Loading,
-	Name,
-	Post,
 } from "../../baseCSS/styles";
 import { FeedItem } from "../../components/Feed/FeedItem";
 
 export default function Feed() {
-	const [error, setError] = useState("");
+	const [, setError] = useState("");
 	const [feed, setFeed] = useState([]);
 	const [page, setPage] = useState(1);
 	const [total, setTotal] = useState(0);
 	const [viewable, setViewable] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [refreshing, setRefreshing] = useState(false);
-	const [text, setText] = useState("");
-	const [comentarios, setComentarios] = useState([]);
-
+	
 	async function loadPage(pageNumber = page, shouldRefresh = false) {
 		if (pageNumber === total) return;
 		if (loading) return;
@@ -51,7 +42,7 @@ export default function Feed() {
 			})
 			.catch((err) => {
 				setError(err.message);
-				setLoading(true);
+				setLoading(false);
 			});
 	}
 
@@ -63,27 +54,7 @@ export default function Feed() {
 		setRefreshing(false);
 	}
 
-	const onGet = (id) => {
-		try {
-			const value = AsyncStorage.getItem(id);
 
-			if (value !== null) {
-				// We have data!!
-				setComentarios(value);
-			}
-		} catch (error) {
-			// Error saving data
-		}
-	};
-
-	const onSave = async (id) => {
-		try {
-			await AsyncStorage.setItem(id, text);
-			setComentarios([...comentarios, ...text]);
-		} catch (error) {
-			// Error saving data
-		}
-	};
 
 	useEffect(() => {
 		loadPage();
