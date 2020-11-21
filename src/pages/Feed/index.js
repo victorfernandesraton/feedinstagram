@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {
-	StyleSheet,
-	FlatList,
 	Button,
-	View,
-	ScrollView,
+	FlatList,
 	TextInput,
 } from "react-native";
 import axios from "axios";
@@ -12,14 +9,15 @@ import LazyImage from "../../components/LazyImage";
 import { AsyncStorage } from "react-native";
 
 import {
-	Container,
-	Post,
-	Header,
 	Avatar,
-	Name,
+	BasicText,
+	Container,
 	Description,
+	Header,
 	Loading,
-} from "./styles";
+	Name,
+	Post,
+} from "../../baseCSS/styles";
 
 export default function Feed() {
 	const [error, setError] = useState("");
@@ -120,7 +118,7 @@ export default function Feed() {
 					multiline={true}
 					onChangeText={(text) => setText(text)}
 					placeholder={"Comentários"}
-					style={[styles.text]}
+					style={BasicText}
 					maxLength={MAX_LENGTH}
 					value={text}
 				/>
@@ -159,16 +157,3 @@ export default function Feed() {
 		</Container>
 	);
 }
-
-const styles = StyleSheet.create({
-	text: {
-		fontSize: 30,
-		lineHeight: 33,
-		color: "#333333",
-		padding: 16,
-		paddingTop: 16,
-		minHeight: 170,
-		borderTopWidth: 1,
-		borderColor: "rgba(212,211,211, 0.3)",
-	},
-});
