@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {
-	Button,
-	FlatList,
-	TextInput,
-} from "react-native";
+import { Button, FlatList, TextInput } from "react-native";
 import axios from "axios";
 import LazyImage from "../../components/LazyImage";
 import { AsyncStorage } from "react-native";
@@ -18,6 +14,7 @@ import {
 	Name,
 	Post,
 } from "../../baseCSS/styles";
+import { FeedItem } from "../../components/Feed/FeedItem";
 
 export default function Feed() {
 	const [error, setError] = useState("");
@@ -29,8 +26,6 @@ export default function Feed() {
 	const [refreshing, setRefreshing] = useState(false);
 	const [text, setText] = useState("");
 	const [comentarios, setComentarios] = useState([]);
-
-	const MAX_LENGTH = 250;
 
 	async function loadPage(pageNumber = page, shouldRefresh = false) {
 		if (pageNumber === total) return;
@@ -94,44 +89,6 @@ export default function Feed() {
 		loadPage();
 	}, []);
 
-	const renderItem = ({ item }) => {
-		return (
-			<Post>
-				<Header>
-					<Avatar source={{ uri: item.author.avatar }} />
-					<Name>{item.author.name}</Name>
-				</Header>
-
-				<LazyImage
-					aspectRatio={item.aspectRatio}
-					shouldLoad={viewable.includes(item.id)}
-					smallSource={{ uri: item.small }}
-					source={{ uri: item.image }}
-				/>
-
-				<Description>
-					<Name>{item.author.name}</Name> {item.description}
-				</Description>
-				<Description>{comentarios}</Description>
-
-				<TextInput
-					multiline={true}
-					onChangeText={(text) => setText(text)}
-					placeholder={"Comentários"}
-					style={BasicText}
-					maxLength={MAX_LENGTH}
-					value={text}
-				/>
-
-				<Button
-					title="Salvar"
-					onPress={() => onSave(String(item.id))}
-					accessibilityLabel="Salvar"
-				></Button>
-			</Post>
-		);
-	};
-
 	const handleViewableChanged = useCallback(({ changed }) => {
 		setViewable(changed.map(({ item }) => item.id));
 	}, []);
@@ -142,7 +99,7 @@ export default function Feed() {
 				key="list"
 				data={feed}
 				keyExtractor={(item) => String(item.id)}
-				renderItem={renderItem}
+				renderItem={(item) => <FeedItem item={item.item} viewable={viewable} />}
 				ListFooterComponent={loading && <Loading />}
 				onViewableItemsChanged={handleViewableChanged}
 				viewabilityConfig={{
