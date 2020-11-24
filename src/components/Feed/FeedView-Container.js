@@ -7,7 +7,7 @@ import FeedItem from "./FeedItem";
 export default function Feed({
 	data = [],
 	loading = false,
-	scenary = 'feed',
+	scenary = "feed",
 	onRefresh,
 	onReached,
 }) {
@@ -23,7 +23,9 @@ export default function Feed({
 			<FlatList
 				data={data}
 				keyExtractor={(item) => String(item.id)}
-				renderItem={(item) => <FeedItem item={item.item} viewable={viewable} scenary={scenary} />}
+				renderItem={(item) => (
+					<FeedItem item={item.item} viewable={viewable} scenary={scenary} />
+				)}
 				ListFooterComponent={loading && <Loading />}
 				onViewableItemsChanged={handleViewableChanged}
 				viewabilityConfig={{
@@ -31,11 +33,11 @@ export default function Feed({
 				}}
 				showsVerticalScrollIndicator={false}
 				onRefresh={() => {
-					setRefreshing(true)
+					setRefreshing(true);
 					if (onRefresh) {
-						onRefresh()
+						onRefresh();
 					}
-					setRefreshing(false)
+					setRefreshing(false);
 				}}
 				refreshing={refreshing}
 				onEndReachedThreshold={0.3}

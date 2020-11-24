@@ -1,204 +1,204 @@
 [
-  {
-    "id": 1,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Working hard at Rocketseat!",
-    "author": 1,
-    "parent": ""
-  },
-  {
-    "id": 2,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Code, code and more code!",
-    "author": 2,
-    "parent": ""
-  },
-  {
-    "id": 3,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Rocketships fly away!",
-    "author": 3,
-    "parent": ""
-  },
-  {
-    "id": 4,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
-    "aspectRatio": 0.834,
-    "description": "3, 2, 1, ready to launch!",
-    "author": 4,
-    "parent": ""
-  },
-  {
-    "id": 5,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Code, code and more code!",
-    "author": 2,
-    "parent": ""
-  },
-  {
-    "id": 6,
-    "type": "connebt",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Node.js + ReactJS + React Native = <3",
-    "author": 3,
-    "parent": ""
-  },
-  {
-    "id": 7,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
-    "aspectRatio": 0.834,
-    "description": "OmniStack to the rescue!",
-    "author": 1,
-    "parent": ""
-  },
-  {
-    "id": 8,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Rocketseat is cool!",
-    "author": 2,
-    "parent": ""
-  },
-  {
-    "id": 9,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/9.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/9.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Have you watched our videos at YouTube?",
-    "author": 4,
-    "parent": ""
-  },
-  {
-    "id": 10,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/10.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/10.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Code, code and more code!",
-    "author": 3,
-    "parent": ""
-  },
-  {
-    "id": 11,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/11.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/11.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Developing new great app!",
-    "author": 1,
-    "parent": ""
-  },
-  {
-    "id": 12,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/12.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/12.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Let's code everyday!",
-    "author": 3,
-    "parent": ""
-  },
-  {
-    "id": 13,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Sleep, eat, code, repeat!",
-    "author": 2
-  },
-  {
-    "id": 14,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Working hard at Rocketseat!",
-    "author": 4
-  },
-  {
-    "id": 15,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Code, code and more code!",
-    "author": 4
-  },
-  {
-    "id": 16,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Just studying some React Native stuff!",
-    "author": 3
-  },
-  {
-    "id": 17,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
-    "aspectRatio": 0.834,
-    "description": "React Native is such a great tool by Facebook!",
-    "author": 2
-  },
-  {
-    "id": 18,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Love what you do, do what you love!",
-    "author": 1
-  },
-  {
-    "id": 19,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Code, code and more code!",
-    "author": 2
-  },
-  {
-    "id": 20,
-    "type": "publication",
-    "media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
-    "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
-    "aspectRatio": 0.834,
-    "description": "Are you working for your dreams?",
-    "author": 1
-  },
-  {
-    "id": 21,
-    "type": "comment",
-    "media": "",
-    "small": "",
-    "aspectRatio": 0.834,
-    "description": "cool",
-    "author": 2,
-    "parent": 1
-  }
+	{
+		"id": 1,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Working hard at Rocketseat!",
+		"author": 1,
+		"parent": ""
+	},
+	{
+		"id": 2,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Code, code and more code!",
+		"author": 2,
+		"parent": ""
+	},
+	{
+		"id": 3,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Rocketships fly away!",
+		"author": 3,
+		"parent": ""
+	},
+	{
+		"id": 4,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
+		"aspectRatio": 0.834,
+		"description": "3, 2, 1, ready to launch!",
+		"author": 4,
+		"parent": ""
+	},
+	{
+		"id": 5,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Code, code and more code!",
+		"author": 2,
+		"parent": ""
+	},
+	{
+		"id": 6,
+		"type": "connebt",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Node.js + ReactJS + React Native = <3",
+		"author": 3,
+		"parent": ""
+	},
+	{
+		"id": 7,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
+		"aspectRatio": 0.834,
+		"description": "OmniStack to the rescue!",
+		"author": 1,
+		"parent": ""
+	},
+	{
+		"id": 8,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Rocketseat is cool!",
+		"author": 2,
+		"parent": ""
+	},
+	{
+		"id": 9,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/9.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/9.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Have you watched our videos at YouTube?",
+		"author": 4,
+		"parent": ""
+	},
+	{
+		"id": 10,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/10.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/10.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Code, code and more code!",
+		"author": 3,
+		"parent": ""
+	},
+	{
+		"id": 11,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/11.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/11.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Developing new great app!",
+		"author": 1,
+		"parent": ""
+	},
+	{
+		"id": 12,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/12.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/12.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Let's code everyday!",
+		"author": 3,
+		"parent": ""
+	},
+	{
+		"id": 13,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Sleep, eat, code, repeat!",
+		"author": 2
+	},
+	{
+		"id": 14,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Working hard at Rocketseat!",
+		"author": 4
+	},
+	{
+		"id": 15,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Code, code and more code!",
+		"author": 4
+	},
+	{
+		"id": 16,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Just studying some React Native stuff!",
+		"author": 3
+	},
+	{
+		"id": 17,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
+		"aspectRatio": 0.834,
+		"description": "React Native is such a great tool by Facebook!",
+		"author": 2
+	},
+	{
+		"id": 18,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Love what you do, do what you love!",
+		"author": 1
+	},
+	{
+		"id": 19,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Code, code and more code!",
+		"author": 2
+	},
+	{
+		"id": 20,
+		"type": "publication",
+		"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
+		"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
+		"aspectRatio": 0.834,
+		"description": "Are you working for your dreams?",
+		"author": 1
+	},
+	{
+		"id": 21,
+		"type": "comment",
+		"media": "",
+		"small": "",
+		"aspectRatio": 0.834,
+		"description": "cool",
+		"author": 2,
+		"parent": 1
+	}
 ]

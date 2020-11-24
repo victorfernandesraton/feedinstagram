@@ -1,20 +1,23 @@
-import axios from 'axios';
-import { dispatchTypes } from "./Feed-constants"
-export const fetchPost = async (dispatch, {page, limit, loading, total, params}) => {
-	if (loading || total == page *limit) return
+import axios from "axios";
+import { dispatchTypes } from "./Feed-constants";
+export const fetchPost = async (
+	dispatch,
+	{ page, limit, loading, total, params }
+) => {
+	if (loading || total == page * limit) return;
 	dispatch({
-		type: dispatchTypes.LOADING
-	})
+		type: dispatchTypes.LOADING,
+	});
 
 	let url = `https://5fbc585cc09c200016d419e5.mockapi.io/instagram-clone/post?page=${page}&limit=${limit}`;
 	if (params?.feedId) {
-		url = `${url}&parent=${params.feedId}&type=comment`
+		url = `${url}&parent=${params.feedId}&type=comment`;
 	} else {
-		url = `${url}&type=publication`
+		url = `${url}&type=publication`;
 	}
-	
+
 	if (params?.authorId) {
-		url = `${url}&author=${params.authorId}`
+		url = `${url}&author=${params.authorId}`;
 	}
 
 	try {
@@ -27,17 +30,17 @@ export const fetchPost = async (dispatch, {page, limit, loading, total, params})
 			payload: {
 				data: data,
 				metadata: {
-					page: data.length  == 0 ? page : page + 1,
+					page: data.length == 0 ? page : page + 1,
 					total: totalItems,
-					limit: limit
-				}
-			}
-		})
+					limit: limit,
+				},
+			},
+		});
 	} catch (error) {
-		console.log(error)
+		console.log(error);
 		dispatch({
 			type: dispatchTypes.ERROR,
-			payload: {error}
-		})
+			payload: { error },
+		});
 	}
-}
+};
