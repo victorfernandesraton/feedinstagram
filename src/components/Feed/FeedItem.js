@@ -2,25 +2,26 @@ import React from "react";
 import { Avatar, Description, Header, Name, Post, BasicText } from "./style";
 import LazyImage from "../LazyImage";
 import { Button, TextInput } from "react-native";
-export const FeedItem = ({ item, viewable }) => {
+import authorJSON from '../../mocks/user.json'
+export default FeedItem = ({ item, viewable }) => {
+	const author = authorJSON.find(i => i.id == item.author);
 	return (
 		<Post>
 			<Header>
-				<Avatar source={{ uri: item.author.avatar }} />
-				<Name>{item.author.name}</Name>
+				<Avatar source={{ uri: author.avatar }} />
+				<Name>{author.name}</Name>
 			</Header>
 
 			<LazyImage
 				aspectRatio={item.aspectRatio}
 				shouldLoad={viewable?.includes(item.id)}
 				smallSource={{ uri: item.small }}
-				source={{ uri: item.image }}
+				source={{ uri: item.media }}
 			/>
 
 			<Description>
 				<Name>{item.author.name}</Name> {item.description}
 			</Description>
-			<Description>{[]}</Description>
 
 			{/* TODO Criar comentário component */}
 			{/* <TextInput

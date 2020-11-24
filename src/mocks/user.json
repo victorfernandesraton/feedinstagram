@@ -1,36 +1,36 @@
 [
 	{
-		"id": "1",
+		"id": 1,
+		"name": "dieegosf",
+		"avatar": "https://avatars0.githubusercontent.com/u/2254731?s=50&v=4",
 		"createdAt": "2020-11-23T10:41:58.690Z",
-		"name": "Zoie Wuckert Jr.",
-		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
 		"age": "2020-02-22T17:55:34.988Z",
 		"mail": "Filiberto_Schaefer5@gmail.com",
 		"password": "wsQ1xg0TRKJH5AZ"
 	},
 	{
-		"id": "2",
+		"id": 2,
+		"name": "cleitonsouza",
+		"avatar": "https://avatars0.githubusercontent.com/u/4669899?s=50&v=4",
 		"createdAt": "2020-11-23T09:22:45.340Z",
-		"name": "Mrs. Freeman Connelly",
-		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/osmanince/128.jpg",
 		"age": "2020-06-04T07:59:12.031Z",
 		"mail": "Vivien_Johnston@yahoo.com",
 		"password": "v75gNj8QtifNfe_"
 	},
 	{
-		"id": "3",
-		"createdAt": "2020-11-23T22:23:48.741Z",
-		"name": "Bryon Gerlach",
-		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/robturlinckx/128.jpg",
+		"id": 3,
+		"name": "pellizzetti",
+		"avatar": "https://avatars2.githubusercontent.com/u/16545335?s=50&v=4",
 		"age": "2020-05-17T03:12:10.506Z",
 		"mail": "Angelo31@gmail.com",
 		"password": "0nGzQ2GYjE0D9gx"
 	},
 	{
-		"id": "4",
+
+		"id": 4,
+		"name": "jpdemagalhaes",
+		"avatar": "https://avatars3.githubusercontent.com/u/7268910?s=50&v=4",
 		"createdAt": "2020-11-23T06:49:46.236Z",
-		"name": "Emilio Lakin",
-		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jarjan/128.jpg",
 		"age": "2020-08-18T00:08:39.280Z",
 		"mail": "Alexandra54@gmail.com",
 		"password": "PZy1VZgZSIXCb0a"
