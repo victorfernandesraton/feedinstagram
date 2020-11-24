@@ -12,17 +12,13 @@ export default function Feed() {
 	);
 
 	const {page, limit, total} = metadata;
-	const [refreshing, setRefreshing] = useState(false);
 
 	
 	async function refreshList() {
-		setRefreshing(true);
 		dispatch({
 			type: dispatchTypes.RESET
 		})
 		await fetchPost(dispatch, {page:1, limit: 4, loading, total: 0 });
-
-		setRefreshing(false);
 	}
 
 	useEffect(() => {
@@ -31,11 +27,11 @@ export default function Feed() {
 
 	return (
 		<FeedView
+			key={'list'}
 			loading={loading}
 			data={data}
 			onReached={() => fetchPost(dispatch, {page, limit, total, loading})}
-			refreshing={refreshing}
-			onRefresh={refreshList}
+			onRefresh={() => refreshList}
 		/>
 	);
 }

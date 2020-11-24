@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { Avatar, Description, Header, Name, Post, BasicText } from "./style";
 import LazyImage from "../LazyImage";
 import { Button, TextInput } from "react-native";
-import authorJSON from '../../mocks/user.json'
-export default FeedItem = ({ item, viewable }) => {
-	const author = authorJSON.find(i => i.id == item.author);
+import authorJSON from "../../mocks/user.json";
+
+import FeedView from "./FeedView-Container";
+import Reducer, { initialState } from "./Feed-reducer";
+import { fetchPost } from "./Feed-action";
+import { dispatchTypes } from "./Feed-constants";
+
+export default FeedItem = ({ item, viewable, scenary }) => {
+	const author = authorJSON.find((i) => i.id == item.author);
+	const [{ data, metadata, loading, called, error }, dispatch] = useReducer(
+		Reducer,
+		initialState
+	);
+
+	const { page, limit, total } = metadata;
+	const [refreshing, setRefreshing] = useState(false);
+
+	async function refreshList() {
+		setRefreshing(true);
+		dispatch({
+			type: dispatchTypes.RESET,
+		});
+
+		await fetchPost(dispatch, {
+			page: 1,
+			limit: 4,
+			loading,
+			total: 0,
+			params: { feedId: item.id },
+		});
+
+		setRefreshing(false);
+	}
+
+	useEffect(() => {
+		fetchPost(dispatch, {
+			page: 1,
+			limit: 3,
+			loading,
+			total,
+			params: { feedId: item.id },
+		});
+	}, []);
+
 	return (
 		<Post>
 			<Header>
@@ -12,12 +53,14 @@ export default FeedItem = ({ item, viewable }) => {
 				<Name>{author.name}</Name>
 			</Header>
 
-			<LazyImage
-				aspectRatio={item.aspectRatio}
-				shouldLoad={viewable?.includes(item.id)}
-				smallSource={{ uri: item.small }}
-				source={{ uri: item.media }}
-			/>
+			{scenary === "feed" && (
+				<LazyImage
+					aspectRatio={item.aspectRatio}
+					shouldLoad={viewable?.includes(item.id)}
+					smallSource={{ uri: item.small }}
+					source={{ uri: item.media }}
+				/>
+			)}
 
 			<Description>
 				<Name>{item.author.name}</Name> {item.description}
@@ -38,6 +81,32 @@ export default FeedItem = ({ item, viewable }) => {
 				onPress={() => onSave(String(item.id))}
 				accessibilityLabel="Salvar"
 			></Button> */}
+			{scenary === "feed" && (
+				<FeedView
+					key={item.id}
+					loading={loading}
+					scenary="comment"
+					data={data}
+					// onReached={() => fetchPost(dispatch, { page, limit, total, loading })}
+					refreshing={refreshing}
+					// onRefresh={refreshList}
+				/>
+			)}
+			{scenary == "feed" && data.length < total && (
+				<Button
+					title="Mostrar mais"
+					onPress={() =>
+						fetchPost(dispatch, {
+							page,
+							limit: 4,
+							loading,
+							total,
+							params: { feedId: item.id },
+						})
+					}
+					accessibilityLabel="Salvar"
+				></Button>
+			)}
 		</Post>
 	);
 };
