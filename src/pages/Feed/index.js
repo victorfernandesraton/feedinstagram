@@ -3,10 +3,7 @@ import { FlatList } from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
 
-import {
-	Container,
-	Loading,
-} from "../../baseCSS/styles";
+import { Container, Loading } from "../../baseCSS/styles";
 import { FeedItem } from "../../components/Feed/FeedItem";
 
 export default function Feed() {
@@ -17,7 +14,7 @@ export default function Feed() {
 	const [viewable, setViewable] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [refreshing, setRefreshing] = useState(false);
-	
+
 	async function loadPage(pageNumber = page, shouldRefresh = false) {
 		if (pageNumber === total) return;
 		if (loading) return;
@@ -53,8 +50,6 @@ export default function Feed() {
 
 		setRefreshing(false);
 	}
-
-
 
 	useEffect(() => {
 		loadPage();

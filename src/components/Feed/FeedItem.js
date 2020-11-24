@@ -1,7 +1,7 @@
-import React from 'react'
-import {Avatar, Description, Header, Name, Post, BasicText} from './style'
-import LazyImage from '../LazyImage'
-import { Button, TextInput } from 'react-native';
+import React from "react";
+import { Avatar, Description, Header, Name, Post, BasicText } from "./style";
+import LazyImage from "../LazyImage";
+import { Button, TextInput } from "react-native";
 export const FeedItem = ({ item, viewable }) => {
 	return (
 		<Post>
