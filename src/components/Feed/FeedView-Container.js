@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
 
 import { Container, Loading } from "../../baseCSS/styles";
 import FeedItem from "./FeedItem";

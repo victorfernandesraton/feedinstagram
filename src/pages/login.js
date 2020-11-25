@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
 	Alert,
 	Text,
@@ -9,39 +9,51 @@ import {
 	TouchableOpacity,
 } from "react-native";
 
-export default class Login extends Component {
+import { useNavigation } from "@react-navigation/native";
+import { useLogin } from "../components/login/Login-context";
+
+export default Login = () => {
+	const {navigate} = useNavigation();
+	const [login, setLogin] = useLogin();
+	const [email, setEmail] = useState("");
+
 	clicou = () => {
 		Alert.alert("Você fez login", "Usuario e senha estão corretos!");
+		setLogin({ logged: true, user: {email} });
+		navigate("feed");
 	};
 
-	render() {
-		return (
-			<View style={styles.container}>
-				<Image
-					source={require("../assets/instagram-logo-5.png")}
-					style={styles.logo}
-				/>
+	return (
+		<View style={styles.container}>
+			<Image
+				source={require("../../assets/instagram-logo-5.png")}
+				style={styles.logo}
+			/>
 
-				<TextInput style={styles.input} placeholder="Digite seu e-mail" />
+			<TextInput
+				style={styles.input}
+				placeholder="Digite seu e-mail"
+				value={email}
+				onChangeText={(text) => setEmail(text)}
+			/>
 
-				<TextInput
-					style={styles.input}
-					secureTextEntry={true}
-					placeholder="Digite sua senha"
-				/>
+			<TextInput
+				style={styles.input}
+				secureTextEntry={true}
+				placeholder="Digite sua senha"
+			/>
 
-				<TouchableOpacity
-					style={styles.botao}
-					onPress={() => {
-						this.clicou();
-					}}
-				>
-					<Text style={styles.botaoText}>Login</Text>
-				</TouchableOpacity>
-			</View>
-		);
-	}
-}
+			<TouchableOpacity
+				style={styles.botao}
+				onPress={() => {
+					this.clicou();
+				}}
+			>
+				<Text style={styles.botaoText}>Login</Text>
+			</TouchableOpacity>
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {
