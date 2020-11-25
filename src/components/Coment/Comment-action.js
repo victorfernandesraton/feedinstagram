@@ -1,5 +1,5 @@
 import { apiMock } from "../../utils/request";
-import { dispatchTypes } from "./Comment-constants";
+import { defaultCommentData, dispatchTypes } from "./Comment-constants";
 
 export const fetchPost = async (
 	dispatch,
@@ -33,6 +33,37 @@ export const fetchPost = async (
 				},
 			},
 		});
+	} catch (error) {
+		dispatch({
+			type: dispatchTypes.ERROR,
+			payload: { error },
+		});
+	}
+};
+
+export const postComment = async (dispatch, { author, content, parent }) => {
+	const sendData = {
+		...defaultCommentData,
+		description: content,
+		author: author?.id,
+		parent: parent?.id,
+	};
+
+	if (!author || !parent) {
+		dispatch({
+			type: dispatchTypes.ERROR,
+			payload: { error: { message: "Invalid args" } },
+		});
+	}
+
+	const url = "/post";
+
+	try {
+		const response = await apiMock.post(url, sendData);
+		dispatch({
+			type: dispatchTypes.CREATED,
+			payload: response.data;
+		})
 	} catch (error) {
 		dispatch({
 			type: dispatchTypes.ERROR,

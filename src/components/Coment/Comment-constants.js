@@ -2,6 +2,12 @@ export const dispatchTypes = {
 	LOADING: "LOADING",
 	SUCESS: "SUCESS",
 	ERROR: "ERROR",
-	PUBLISHING: "PUBLISHING",
-	PUBLISHED: "PUBLISHD",
+	CREATED: "CREATED",
+};
+
+export const defaultCommentData = {
+	media: "",
+	type: "comment",
+	aspectRatio: 0,
+	small: "",
 };
