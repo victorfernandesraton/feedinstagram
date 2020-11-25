@@ -18,7 +18,7 @@ export default class Login extends Component {
 		return (
 			<View style={styles.container}>
 				<Image
-					source={require("./assets/instagram-logo-5.png")}
+					source={require("../assets/instagram-logo-5.png")}
 					style={styles.logo}
 				/>
 
@@ -46,7 +46,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		display: 'flex',
+		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
 		backgroundColor: "#fefefe",

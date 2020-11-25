@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native'
 
 import Feed from './src/pages/feed';
-import Login from './Login';
+import Login from './src/pages/login';
 
 const Stack = createStackNavigator()
 
