@@ -1,0 +1,7 @@
+export const dispatchTypes = {
+	LOADING: "LOADING",
+	SUCESS: "SUCESS",
+	ERROR: "ERROR",
+	PUBLISHING: "PUBLISHING",
+	PUBLISHED: "PUBLISHD",
+};

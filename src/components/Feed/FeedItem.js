@@ -8,6 +8,7 @@ import FeedView from "./FeedView-Container";
 import Reducer, { initialState } from "./Feed-reducer";
 import { fetchPost } from "./Feed-action";
 import { dispatchTypes } from "./Feed-constants";
+import CommentView from "../Coment/CommentView-Container";
 
 export default FeedItem = ({ item, viewable, scenary }) => {
 	const author = authorJSON.find((i) => i.id == item.author);
@@ -81,17 +82,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 				onPress={() => onSave(String(item.id))}
 				accessibilityLabel="Salvar"
 			></Button> */}
-			{scenary === "feed" && (
-				<FeedView
-					key={item.id}
-					loading={loading}
-					scenary="comment"
-					data={data}
-					// onReached={() => fetchPost(dispatch, { page, limit, total, loading })}
-					refreshing={refreshing}
-					// onRefresh={refreshList}
-				/>
-			)}
+			{scenary === "feed" && <CommentView parentId={item.id} key={item.id} />}
 			{scenary == "feed" && data.length < total && (
 				<Button
 					title="Mostrar mais"
