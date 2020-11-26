@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useCallback } from "react";
 import { Button, FlatList, TextInput, View } from "react-native";
 
 import CommentInput from "./CommentInput";
@@ -14,6 +14,11 @@ const CommentView = ({ parentId }) => {
 		initialState
 	);
 	const { page, limit, total } = metadata;
+
+	const onPost = useCallback((data) => {
+		console.log(data);
+		addComment(dispatch, { data: data, total });
+	});
 
 	useEffect(() => {
 		if (!loading && !called) {
@@ -35,13 +40,7 @@ const CommentView = ({ parentId }) => {
 			/>
 			{total >= limit && <Button title="Carregar mais" />}
 			{total < limit && (
-				<CommentInput
-					onPost={(data) => {
-						addComment(dispatch, data);
-					}}
-					total={total}
-					parent={{ id: parentId }}
-				/>
+				<CommentInput onPost={onPost} total={total} parent={{ id: parentId }} />
 			)}
 		</>
 	);

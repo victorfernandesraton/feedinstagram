@@ -69,9 +69,9 @@ export const postComment = async (dispatch, { author, content, parent }) => {
 	}
 };
 
-export const addComment = (dispatch, data) => {
+export const addComment = (dispatch, { data, total }) => {
 	dispatch({
 		type: dispatchTypes.CREATED,
-		payload: { data: [data] },
+		payload: { data: [data], metadata: { total: total + 1 } },
 	});
 };

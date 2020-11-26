@@ -26,6 +26,7 @@ export default (state = initialState, { type, payload }) => {
 				error: null,
 				loading: false,
 				called: true,
+				metadata: { ...state.metadata, ...payload.metadata },
 				data: [...state.data, ...payload.data],
 			};
 
