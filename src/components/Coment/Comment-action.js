@@ -60,14 +60,18 @@ export const postComment = async (dispatch, { author, content, parent }) => {
 
 	try {
 		const response = await apiMock.post(url, sendData);
-		dispatch({
-			type: dispatchTypes.CREATED,
-			payload: response.data;
-		})
+		return response.data;
 	} catch (error) {
 		dispatch({
 			type: dispatchTypes.ERROR,
 			payload: { error },
 		});
 	}
+};
+
+export const addComment = (dispatch, data) => {
+	dispatch({
+		type: dispatchTypes.CREATED,
+		payload: { data: [data] },
+	});
 };

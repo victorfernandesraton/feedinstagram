@@ -13,13 +13,13 @@ import { useNavigation } from "@react-navigation/native";
 import { useLogin } from "../components/login/Login-context";
 
 export default Login = () => {
-	const {navigate} = useNavigation();
+	const { navigate } = useNavigation();
 	const [login, setLogin] = useLogin();
 	const [email, setEmail] = useState("");
 
 	clicou = () => {
 		Alert.alert("Você fez login", "Usuario e senha estão corretos!");
-		setLogin({ logged: true, user: {email} });
+		setLogin({ logged: true, user: { email } });
 		navigate("feed");
 	};
 

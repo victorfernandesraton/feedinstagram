@@ -1,4 +1,4 @@
-import {dispatchTypes} from './Comment-constants'
+import { dispatchTypes } from "./Comment-constants";
 
 const initialMetadata = {
 	page: 0,
@@ -18,7 +18,8 @@ export default (state = initialState, { type, payload }) => {
 	switch (type) {
 		case dispatchTypes.LOADING:
 			return { ...state, loading: true };
-		case dispatchTypes.SUCESS: {
+		case dispatchTypes.SUCESS:
+		case dispatchTypes.CREATED:
 			return {
 				...state,
 				...payload,
@@ -27,7 +28,7 @@ export default (state = initialState, { type, payload }) => {
 				called: true,
 				data: [...state.data, ...payload.data],
 			};
-		}
+
 		case dispatchTypes.ERROR:
 			return {
 				...state,

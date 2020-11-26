@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { Button, FlatList, View } from "react-native";
+import { Button, FlatList, TextInput, View } from "react-native";
+
+import CommentInput from "./CommentInput";
 
 import CommentItem from "./CommentItem";
 import Reducer, { initialState } from "./Comment-reducer";
-import { fetchPost } from "./Comment-action";
+import { addComment, fetchPost } from "./Comment-action";
 import { Loading } from "../../baseCSS/styles";
 
 const CommentView = ({ parentId }) => {
@@ -20,7 +22,7 @@ const CommentView = ({ parentId }) => {
 	}, []);
 
 	return (
-		<View>
+		<>
 			<FlatList
 				data={data}
 				keyExtractor={(item) => String(item.id)}
@@ -31,10 +33,14 @@ const CommentView = ({ parentId }) => {
 				}}
 				showsVerticalScrollIndicator={false}
 			/>
-			{total > limit && (
-				<Button title="Carregar mais" />
-			)}
-		</View>
+			{total > limit && <Button title="Carregar mais" />}
+			<CommentInput
+				onPost={(data) => {
+					addComment(dispatch, data);
+				}}
+				parent={{id: parentId}}			
+			/>
+		</>
 	);
 };
 

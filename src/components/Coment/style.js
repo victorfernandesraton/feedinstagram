@@ -36,3 +36,13 @@ export const BasicText = styled.Text`
 	border-top-width: 1;
 	border-color: rgba(212, 211, 211, 0.3);
 `;
+
+export const CommentTextInput = styled.TextInput`
+	display: flex;
+	/* margin: 16, 2; */
+	border-color: #c4c4;
+	width: 312;
+	height: 54;
+	/* width: "90%"; */
+	font-size: 24;
+`;
