@@ -39,10 +39,38 @@ export const BasicText = styled.Text`
 
 export const CommentTextInput = styled.TextInput`
 	display: flex;
-	/* margin: 16, 2; */
 	border-color: #c4c4;
-	width: 312;
-	height: 54;
-	/* width: "90%"; */
+	width: 85%;
+	height: 32;
+	/* padding: 10; */
+	margin: 8px;
+	background-color: #c2c2c2;
+	border-radius: 16;
 	font-size: 24;
+	text-align: justify;
+	align-self: center;
 `;
+
+export const CommentInputContainer = styled.View`
+	display: flex;
+	flex-direction: row;
+	height: 40;
+	margin: 8px;
+	width: 90%;
+`;
+
+export const CommentInputButton = styled.TouchableOpacity`
+	display: flex;
+	height: 32;
+	padding: 6px;
+	background-color: #7474c3;
+	color: #fafafa;
+	border-radius: 2;
+	/* width: 25%; */
+	align-self: center;
+`;
+
+export const CommentInputButtonText = styled.Text`
+	color: #fafafa;
+	font-size: 16;
+`

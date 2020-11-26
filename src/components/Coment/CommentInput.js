@@ -1,39 +1,45 @@
-import React, { useReducer, useState } from "react";
-import { Button, View } from "react-native";
+import React, { useCallback, useReducer, useState } from "react";
+import { Button, Text, View } from "react-native";
 import { Post } from "../Feed/style";
 import { postComment } from "./Comment-action";
 import Reducer, { initialState } from "./Comment-reducer";
-import { CommentTextInput } from "./style";
+import {
+	CommentInputButton,
+	CommentInputButtonText,
+	CommentInputContainer,
+	CommentTextInput,
+} from "./style";
 
-const CommentInput = ({ parent, onPost }) => {
+const CommentInput = ({ parent, onPost, total }) => {
 	const [content, setContent] = useState("");
-	const [{ loading, called, data }, dispatch] = useReducer(
-		Reducer,
-		initialState
-	);
+	const [{ loading }, dispatch] = useReducer(Reducer, initialState);
+
+	const sendComment = useCallback(async () => {
+		setContent("");
+		const response = await postComment(dispatch, {
+			author: { id: 1 },
+			content,
+			parent: 1,
+		});
+		if (onPost) {
+			onPost(response);
+		}
+	}, [onPost, parent]);
 
 	return (
-		<>
+		<CommentInputContainer>
 			<CommentTextInput
 				editable={!loading}
 				value={content}
 				onChangeText={(text) => {
 					setContent(text);
 				}}
+				placeholder={total > 0 ? "Commente aqui" : "Seja o primeiro a comentar"}
 			/>
-			<Button
-				title="postar"
-				disabled={loading}
-				onPress={() => {
-					setContent("");
-					postComment(dispatch, { author: { id: 1 }, content, parent: 1 }).then(
-						(data) => {
-							onPost(data);
-						}
-					);
-				}}
-			/>
-		</>
+			<CommentInputButton disabled={loading} onPress={sendComment}>
+				<CommentInputButtonText>Postar</CommentInputButtonText>
+			</CommentInputButton>
+		</CommentInputContainer>
 	);
 };
 

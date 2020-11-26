@@ -17,7 +17,7 @@ const CommentView = ({ parentId }) => {
 
 	useEffect(() => {
 		if (!loading && !called) {
-			fetchPost(dispatch, { page: 1, limit: 4, loading, total, parentId });
+			fetchPost(dispatch, { page: 1, limit: 2, loading, total, parentId });
 		}
 	}, []);
 
@@ -33,13 +33,16 @@ const CommentView = ({ parentId }) => {
 				}}
 				showsVerticalScrollIndicator={false}
 			/>
-			{total > limit && <Button title="Carregar mais" />}
-			<CommentInput
-				onPost={(data) => {
-					addComment(dispatch, data);
-				}}
-				parent={{id: parentId}}			
-			/>
+			{total >= limit && <Button title="Carregar mais" />}
+			{total < limit && (
+				<CommentInput
+					onPost={(data) => {
+						addComment(dispatch, data);
+					}}
+					total={total}
+					parent={{ id: parentId }}
+				/>
+			)}
 		</>
 	);
 };
