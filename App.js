@@ -16,9 +16,15 @@ export default function App() {
 			<View style={style.container}>
 				<NavigationContainer>
 					<Stack.Navigator initialRouteName="login">
-						<Stack.Screen name="login" component={Login} />
-						<Stack.Screen name="feed" component={Feed} />
-						<Stack.Screen name="single-feed" component={Feed} />
+						<Stack.Screen name="login" component={Login} options={{
+							title: 'Logina'
+						}}/>
+						<Stack.Screen name="feed" component={Feed} options={{
+							title: 'Feed'
+						}}/>
+						<Stack.Screen name="single-feed" component={Feed} options={{
+							title: 'Comentários'
+						}}/>
 					</Stack.Navigator>
 				</NavigationContainer>
 			</View>
