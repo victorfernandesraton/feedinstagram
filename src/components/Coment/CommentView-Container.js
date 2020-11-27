@@ -18,10 +18,23 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 	);
 	const { page, limit, total } = metadata;
 
-
 	const onPost = useCallback((data) => {
 		addComment(dispatch, { data: data, total });
 	});
+
+	const onButtonMore = useCallback(() => {
+		if (scenary === "feed") {
+			navigate("single-feed", { id: parentId, scenary: "single-feed" });
+		} else {
+			fetchPost(dispatch, {
+				page,
+				limit: scenary == "single-feed" ? 5 : 2,
+				loading,
+				total,
+				parentId,
+			});
+		}
+	}, [page, limit, scenary, total, parentId]);
 
 	useEffect(() => {
 		if (!loading && !called) {
@@ -47,26 +60,12 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 				}}
 				showsVerticalScrollIndicator={false}
 			/>
-			{total >= limit && total != 0 && (
-				<Button
-					title="Ver comentários"
-					onPress={() => {
-						if (scenary === 'feed') {
-							navigate("single-feed", { id: parentId, scenary: "single-feed" });
-						} else {
-							fetchPost(dispatch, {
-								page,
-								limit: scenary == "single-feed" ? 5 : 2,
-								loading,
-								total,
-								parentId,
-							});
-						}
-					}}
-				/>
-			)}
-			{(scenary == "single-feed" || (total < limit || total == 0)) && (
+
+			{(scenary == "single-feed" || total < limit || total == 0) && (
 				<CommentInput onPost={onPost} total={total} parent={{ id: parentId }} />
+			)}
+			{total >= limit && total != 0 && (
+				<Button title="Ver comentários" onPress={onButtonMore} />
 			)}
 		</>
 	);

@@ -25,8 +25,6 @@ export const fetchPost = async (
 		url = `${url}&author=${params.authorId}`;
 	}
 
-	console.log(url)
-
 	try {
 		const response = await axios.get(url);
 
