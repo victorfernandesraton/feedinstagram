@@ -10,8 +10,13 @@ export const fetchPost = async (
 	});
 
 	let url = `https://5fbc585cc09c200016d419e5.mockapi.io/instagram-clone/post?page=${page}&limit=${limit}`;
+	
 	if (params?.feedId) {
-		url = `${url}&parent=${params.feedId}&type=comment`;
+		url = `${url}&id=${params.feedId}`;
+	}
+
+	if (params?.type) {
+		url = `${url}&type=${params.type}`;
 	} else {
 		url = `${url}&type=publication`;
 	}
@@ -19,6 +24,8 @@ export const fetchPost = async (
 	if (params?.authorId) {
 		url = `${url}&author=${params.authorId}`;
 	}
+
+	console.log(url)
 
 	try {
 		const response = await axios.get(url);

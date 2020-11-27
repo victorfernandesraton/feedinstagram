@@ -16,8 +16,9 @@ export default function App() {
 			<View style={style.container}>
 				<NavigationContainer>
 					<Stack.Navigator initialRouteName="login">
-						<Stack.Screen name="feed" component={Feed} />
 						<Stack.Screen name="login" component={Login} />
+						<Stack.Screen name="feed" component={Feed} />
+						<Stack.Screen name="single-feed" component={Feed} />
 					</Stack.Navigator>
 				</NavigationContainer>
 			</View>

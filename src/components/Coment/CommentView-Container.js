@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useReducer, useCallback } from "react";
 import { Button, FlatList, TextInput, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import CommentInput from "./CommentInput";
 
@@ -8,21 +9,29 @@ import Reducer, { initialState } from "./Comment-reducer";
 import { addComment, fetchPost } from "./Comment-action";
 import { Loading } from "../../baseCSS/styles";
 
-const CommentView = ({ parentId }) => {
+const CommentView = ({ parentId, scenary = "feed" }) => {
+	const { navigate } = useNavigation();
+
 	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
 		initialState
 	);
 	const { page, limit, total } = metadata;
 
+
 	const onPost = useCallback((data) => {
-		console.log(data);
 		addComment(dispatch, { data: data, total });
 	});
 
 	useEffect(() => {
 		if (!loading && !called) {
-			fetchPost(dispatch, { page: 1, limit: 2, loading, total, parentId });
+			fetchPost(dispatch, {
+				page: 1,
+				limit: scenary == "single-feed" ? 5 : 2,
+				loading,
+				total,
+				parentId,
+			});
 		}
 	}, []);
 
@@ -38,8 +47,25 @@ const CommentView = ({ parentId }) => {
 				}}
 				showsVerticalScrollIndicator={false}
 			/>
-			{total >= limit && <Button title="Carregar mais" />}
-			{total < limit && (
+			{total >= limit && total != 0 && (
+				<Button
+					title="Ver comentários"
+					onPress={() => {
+						if (scenary === 'feed') {
+							navigate("single-feed", { id: parentId, scenary: "single-feed" });
+						} else {
+							fetchPost(dispatch, {
+								page,
+								limit: scenary == "single-feed" ? 5 : 2,
+								loading,
+								total,
+								parentId,
+							});
+						}
+					}}
+				/>
+			)}
+			{(scenary == "single-feed" || (total < limit || total == 0)) && (
 				<CommentInput onPost={onPost} total={total} parent={{ id: parentId }} />
 			)}
 		</>

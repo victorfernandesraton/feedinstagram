@@ -4,7 +4,6 @@ import LazyImage from "../LazyImage";
 import { Button, TextInput } from "react-native";
 import authorJSON from "../../mocks/user.json";
 
-import FeedView from "./FeedView-Container";
 import Reducer, { initialState } from "./Feed-reducer";
 import { fetchPost } from "./Feed-action";
 import { dispatchTypes } from "./Feed-constants";
@@ -67,36 +66,8 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 				<Name>{item.author.name}</Name> {item.description}
 			</Description>
 
-			{/* TODO Criar comentário component */}
-			{/* <TextInput
-				multiline={true}
-				onChangeText={(text) => setText(text)}
-				placeholder={"Comentários"}
-				style={BasicText}
-				maxLength={250}
-				value={text}
-			/> */}
-
-			{/* <Button
-				title="Salvar"
-				onPress={() => onSave(String(item.id))}
-				accessibilityLabel="Salvar"
-			></Button> */}
-			{scenary === "feed" && <CommentView parentId={item.id} key={item.id} />}
-			{scenary == "feed" && data.length < total && (
-				<Button
-					title="Mostrar mais"
-					onPress={() =>
-						fetchPost(dispatch, {
-							page,
-							limit: 4,
-							loading,
-							total,
-							params: { feedId: item.id },
-						})
-					}
-					accessibilityLabel="Salvar"
-				></Button>
+			{scenary.includes("feed") && (
+				<CommentView parentId={item.id}  scenary={scenary}/>
 			)}
 		</Post>
 	);

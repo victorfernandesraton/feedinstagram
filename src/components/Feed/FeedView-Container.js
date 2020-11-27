@@ -41,7 +41,7 @@ export default function Feed({
 				}}
 				refreshing={refreshing}
 				onEndReachedThreshold={0.3}
-				onEndReached={onReached}
+				onEndReached={onReached ? onReached : () => false}
 			/>
 		</Container>
 	);
