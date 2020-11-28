@@ -42,7 +42,7 @@ export const CommentTextInput = styled.TextInput`
 	border-color: #c4c4;
 	width: 85%;
 	padding: 8px;
-	height: ${props => props.height > 32 ? props.height : 32};
+	height: ${(props) => (props.height > 32 ? props.height : 32)};
 	margin: 8px;
 	background-color: #c2c2c2;
 	border-radius: 16;

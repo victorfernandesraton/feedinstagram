@@ -10,7 +10,7 @@ export const fetchPost = async (
 	});
 
 	let url = `https://5fbc585cc09c200016d419e5.mockapi.io/instagram-clone/post?page=${page}&limit=${limit}`;
-	
+
 	if (params?.feedId) {
 		url = `${url}&id=${params.feedId}`;
 	}

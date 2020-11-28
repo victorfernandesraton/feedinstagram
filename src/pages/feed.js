@@ -4,8 +4,8 @@ import FeedView from "../components/Feed/FeedView-Container";
 import Reducer, { initialState } from "../components/Feed/Feed-reducer";
 import { fetchPost } from "../components/Feed/Feed-action";
 import { dispatchTypes } from "../components/Feed/Feed-constants";
-export default function Feed({route}) {
-	const scenary = route?.params?.scenary
+export default function Feed({ route }) {
+	const scenary = route?.params?.scenary;
 	const id = route?.params?.id;
 
 	const [{ data, metadata, loading }, dispatch] = useReducer(
@@ -16,10 +16,10 @@ export default function Feed({route}) {
 	const { page, limit, total } = metadata;
 
 	const loadMore = useCallback(() => {
-		if (scenary != 'single-feed') {
-			fetchPost(dispatch, { page, limit, total, loading })
+		if (scenary != "single-feed") {
+			fetchPost(dispatch, { page, limit, total, loading });
 		}
-	}, [page, limit, id, scenary])
+	}, [page, limit, id, scenary]);
 
 	async function refreshList() {
 		dispatch({

@@ -67,7 +67,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 			</Description>
 
 			{scenary.includes("feed") && (
-				<CommentView parentId={item.id}  scenary={scenary}/>
+				<CommentView parentId={item.id} scenary={scenary} />
 			)}
 		</Post>
 	);
