@@ -10,9 +10,9 @@ export default function Feed({
 	scenary = "feed",
 	onRefresh,
 	onReached,
+	refreshing
 }) {
 	const [viewable, setViewable] = useState([]);
-	const [refreshing, setRefreshing] = useState(false);
 
 	const handleViewableChanged = useCallback(({ changed }) => {
 		setViewable(changed.map(({ item }) => item.id));
@@ -21,7 +21,7 @@ export default function Feed({
 	return (
 		<Container>
 			<FlatList
-				data={data}
+				data={Array.from(new Set(data))}
 				keyExtractor={(item) => String(item.id)}
 				renderItem={(item) => (
 					<FeedItem item={item.item} viewable={viewable} scenary={scenary} />
@@ -32,13 +32,8 @@ export default function Feed({
 					viewAreaCoveragePercentThreshold: 10,
 				}}
 				showsVerticalScrollIndicator={false}
-				onRefresh={() => {
-					setRefreshing(true);
-					if (onRefresh) {
-						onRefresh();
-					}
-					setRefreshing(false);
-				}}
+				onRefresh={onRefresh}
+				maxToRenderPerBatch={10}
 				refreshing={refreshing}
 				onEndReachedThreshold={0.3}
 				onEndReached={onReached ? onReached : () => false}

@@ -2,12 +2,13 @@ import axios from "axios";
 import { dispatchTypes } from "./Feed-constants";
 export const fetchPost = async (
 	dispatch,
-	{ page, limit, loading, total, params }
+	{ page, limit, loading, total, params = {} }
 ) => {
-	if (loading || total == page * limit) return;
+	if (loading) return;
 	dispatch({
 		type: dispatchTypes.LOADING,
 	});
+	if (total == page * limit) return;
 
 	let url = `https://5fbc585cc09c200016d419e5.mockapi.io/instagram-clone/post?page=${page}&limit=${limit}`;
 

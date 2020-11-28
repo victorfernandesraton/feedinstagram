@@ -7,6 +7,7 @@ const initialMetadata = {
 };
 export const initialState = {
 	loading: false,
+	refreshing: false,
 	called: false,
 	data: [],
 	error: null,
@@ -23,6 +24,7 @@ export default (state = initialState, { type, payload }) => {
 				...payload,
 				error: null,
 				loading: false,
+				refreshing: false,
 				called: true,
 				data: [...state.data, ...payload.data],
 			};
@@ -32,10 +34,11 @@ export default (state = initialState, { type, payload }) => {
 				...state,
 				called: true,
 				loading: false,
+				refreshing: false,
 				error: payload.error,
 			};
 		case dispatchTypes.RESET:
-			return { ...initialState };
+			return { ...initialState, refreshing: true };
 		default:
 			return state;
 	}
