@@ -16,14 +16,14 @@ export default function Feed({ route }) {
 	const { page, limit, total } = metadata;
 
 	const loadMore = useCallback(() => {
-		if (loading) return
+		if (loading) return;
 		if (scenary != "single-feed") {
 			fetchPost(dispatch, { page, limit, total, loading });
 		}
 	}, [page, loading, limit, id, scenary]);
 
 	const onRefresh = useCallback(() => {
-		if (loading && !called) return
+		if (loading && !called) return;
 		if (scenary !== "single-feed") {
 			dispatch({
 				type: dispatchTypes.RESET,
@@ -40,7 +40,7 @@ export default function Feed({ route }) {
 	}, []);
 
 	useEffect(() => {
-		if (loading || called) return
+		if (loading || called) return;
 		let params;
 		if (scenary == "single-feed") {
 			params = { feedId: id };

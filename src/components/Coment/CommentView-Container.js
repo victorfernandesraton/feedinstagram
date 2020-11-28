@@ -49,12 +49,12 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 	}, []);
 
 	useEffect(() => {
-		if (scenary === 'single-feed' && total) {
+		if (scenary === "single-feed" && total) {
 			setOptions({
-				title: `Comentários - ${total}`
-			})
+				title: `Comentários - ${total}`,
+			});
 		}
-	}, [scenary, total])
+	}, [scenary, total]);
 
 	return (
 		<>

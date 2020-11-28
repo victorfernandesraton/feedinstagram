@@ -10,7 +10,7 @@ export default function Feed({
 	scenary = "feed",
 	onRefresh,
 	onReached,
-	refreshing
+	refreshing,
 }) {
 	const [viewable, setViewable] = useState([]);
 
