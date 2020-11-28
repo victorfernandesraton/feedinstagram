@@ -20,7 +20,8 @@ export default function App() {
 							title: 'Logina'
 						}}/>
 						<Stack.Screen name="feed" component={Feed} options={{
-							title: 'Feed'
+							title: 'Feed',
+							headerLeft: null
 						}}/>
 						<Stack.Screen name="single-feed" component={Feed} options={{
 							title: 'Comentários'

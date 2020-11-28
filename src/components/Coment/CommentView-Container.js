@@ -60,7 +60,7 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 		<>
 			<FlatList
 				data={data}
-				keyExtractor={(item) => String(item.id)}
+				keyExtractor={(item) => String(`${parentId}-${item.id}`)}
 				renderItem={(item) => <CommentItem item={item.item} />}
 				ListFooterComponent={loading && <Loading />}
 				viewabilityConfig={{

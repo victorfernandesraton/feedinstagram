@@ -46,7 +46,7 @@ export default function Feed({ route }) {
 			params,
 		});
 	}, []);
-	
+
 	return (
 		<FeedView
 			scenary={scenary}
