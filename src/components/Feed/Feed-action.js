@@ -1,6 +1,6 @@
 import axios from "axios";
 import { dispatchTypes } from "./Feed-constants";
-export const fetchPost = typedispatch => async (
+export const fetchPost = (typedispatch) => async (
 	dispatch,
 	{ page, limit, loading, total, params = {} }
 ) => {
@@ -55,5 +55,4 @@ export const getPost = fetchPost({
 	SUCESS: dispatchTypes.SUCESS,
 	ERROR: dispatchTypes.ERROR,
 	LOADING: dispatchTypes.LOADING,
-})
-
+});
