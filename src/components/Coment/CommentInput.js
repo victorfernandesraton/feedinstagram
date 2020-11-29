@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer, useState } from "react";
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { postComment } from "./Comment-action";
 import Reducer, { initialState } from "./Comment-reducer";
@@ -10,7 +10,6 @@ import {
 	CommentInputContainer,
 	CommentTextInput,
 } from "./style";
-
 
 const CommentInput = ({ parent, onPost, total }) => {
 	const [content, setContent] = useState("");
@@ -51,7 +50,7 @@ const CommentInput = ({ parent, onPost, total }) => {
 				disabled={loading}
 				onPress={() => sendComment(content)}
 			>
-				<Icon name='send' size={30}></Icon>				
+				<Icon name="send" size={30}></Icon>
 			</CommentInputButton>
 		</CommentInputContainer>
 	);

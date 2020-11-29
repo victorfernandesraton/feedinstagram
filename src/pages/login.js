@@ -20,7 +20,7 @@ export default Login = () => {
 	const [error, setError] = useState({});
 
 	clicou = () => {
-		validation(email, setError)
+		validation(email, setError);
 
 		// Alert.alert("Você fez login", "Usuario e senha estão corretos!");
 		// setLogin({ logged: true, user: { email } });
@@ -40,9 +40,8 @@ export default Login = () => {
 				value={email}
 				onChangeText={(text) => setEmail(text)}
 			/>
-			
-	{error.email && (<Text>Error de email</Text>)}
 
+			{error.email && <Text>Error de email</Text>}
 
 			<TextInput
 				style={styles.input}
