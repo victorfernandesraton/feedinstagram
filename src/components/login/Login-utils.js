@@ -12,3 +12,16 @@ export const validateEmail = (text, setError) => {
 	setError({ email: null });
 	return true;
 };
+
+
+export const validatePass = (text, setError) => {
+	if (!text == "" || text?.length == 0) {
+		setError({ pass: "Campo obrigatório" });
+		return false;
+	} else if(text.length<6){
+		setError({ pass: "Senha Inválida" })
+		return false;
+	}
+	setError({ pass: null });
+	return true;
+}

@@ -10,22 +10,33 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { useLogin } from "../components/login/Login-context";
-import { validateEmail } from "../components/login/Login-validation";
+import { validateEmail, validatePass } from "../components/login/Login-utils";
+import { apiMock } from "../utils/request";
 
 export default Login = () => {
 	const { navigate } = useNavigation();
 	const [login, setLogin] = useLogin();
 	const [email, setEmail] = useState("");
+	const [pass, setPass] = useState("");
 	const [error, setError] = useState({});
 
 	const handleLogin = useCallback(() => {
 		const emailValid = validateEmail(email, setError);
-		if (emailValid) {
+		const passValid = validatePass(pass, setError);
+		if (emailValid && passValid) {
 			// Fazer requisição http
+			apiMock.get(`/user?mail=${email}`).then(data => {
+				console.log(data)
+			}).catch(error => {
+				console.log(error)
+			})
+
 			setLogin({ logged: true, user: { email } });
 			navigate("feed");
+
 		}
 	}, [error, email]);
+
 
 	return (
 		<View style={styles.container}>
@@ -47,6 +58,8 @@ export default Login = () => {
 				style={styles.input}
 				secureTextEntry={true}
 				placeholder="Digite sua senha"
+				value={pass}
+				onChangeText={(text) => setPass(text)}
 			/>
 
 			<TouchableOpacity style={styles.botao} onPress={handleLogin}>
