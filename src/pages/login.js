@@ -25,8 +25,15 @@ export default Login = () => {
 		const passValid = validatePass(pass, setError);
 		if (emailValid && passValid) {
 			// Fazer requisição http
+			apiMock.get(`/user?mail=${email}`).then(data => {
+				console.log(data)
+			}).catch(error => {
+				console.log(error)
+			})
+
 			setLogin({ logged: true, user: { email } });
 			navigate("feed");
+
 		}
 	}, [error, email]);
 
