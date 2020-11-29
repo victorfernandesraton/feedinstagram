@@ -40,7 +40,7 @@ export const BasicText = styled.Text`
 export const CommentTextInput = styled.TextInput`
 	display: flex;
 	border-color: #c4c4;
-	width: 85%;
+	width: 90%;
 	padding: 8px;
 	height: ${(props) => (props.height > 32 ? props.height : 32)};
 	margin: 8px;
@@ -62,10 +62,7 @@ export const CommentInputContainer = styled.View`
 export const CommentInputButton = styled.TouchableOpacity`
 	display: flex;
 	height: 32;
-	padding: 6px;
-	background-color: #7474c3;
-	color: #fafafa;
-	border-radius: 2;
+	margin-left: 8;
 	/* width: 25%; */
 	align-self: center;
 `;

@@ -2,12 +2,12 @@ import React, { useState, useEffect, useReducer, useCallback } from "react";
 import { Button, FlatList, TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import CommentInput from "./CommentInput";
+import { Loading } from "../../baseCSS/styles";
 
+import CommentInput from "./CommentInput";
 import CommentItem from "./CommentItem";
 import Reducer, { initialState } from "./Comment-reducer";
 import { addComment, fetchPost } from "./Comment-action";
-import { Loading } from "../../baseCSS/styles";
 
 const CommentView = ({ parentId, scenary = "feed" }) => {
 	const { navigate, setOptions } = useNavigation();
@@ -66,6 +66,7 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 				viewabilityConfig={{
 					viewAreaCoveragePercentThreshold: 10,
 				}}
+				ListFooterComponent={loading && <Loading />}
 				showsVerticalScrollIndicator={false}
 			/>
 
