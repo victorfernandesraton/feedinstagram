@@ -25,7 +25,7 @@ export default Login = () => {
 			setLogin({ logged: true, user: { email } });
 			navigate("feed");
 		}
-	}, [error]);
+	}, [error, email]);
 
 	return (
 		<View style={styles.container}>

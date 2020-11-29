@@ -17,7 +17,7 @@ export default function App() {
 				<NavigationContainer>
 					<Stack.Navigator initialRouteName="login">
 						<Stack.Screen name="login" component={Login} options={{
-							title: 'Logina'
+							title: 'Login'
 						}}/>
 						<Stack.Screen name="feed" component={Feed} options={{
 							title: 'Feed',
