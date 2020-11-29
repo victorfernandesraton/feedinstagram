@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
-	Alert,
 	Text,
 	StyleSheet,
 	View,
@@ -11,7 +10,7 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { useLogin } from "../components/login/Login-context";
-import { validation } from "../components/login/Login-validation";
+import { validateEmail } from "../components/login/Login-validation";
 
 export default Login = () => {
 	const { navigate } = useNavigation();
@@ -19,13 +18,14 @@ export default Login = () => {
 	const [email, setEmail] = useState("");
 	const [error, setError] = useState({});
 
-	clicou = () => {
-		validation(email, setError);
-
-		// Alert.alert("Você fez login", "Usuario e senha estão corretos!");
-		// setLogin({ logged: true, user: { email } });
-		// navigate("feed");
-	};
+	const handleLogin = useCallback(() => {
+		const emailValid = validateEmail(email, setError);
+		if (emailValid) {
+			// Fazer requisição http
+			setLogin({ logged: true, user: { email } });
+			navigate("feed");
+		}
+	}, [error]);
 
 	return (
 		<View style={styles.container}>
@@ -40,8 +40,8 @@ export default Login = () => {
 				value={email}
 				onChangeText={(text) => setEmail(text)}
 			/>
-
-			{error.email && <Text>Error de email</Text>}
+			{/* Mensagen de erro */}
+			{error.email && <Text>{error.email}</Text>}
 
 			<TextInput
 				style={styles.input}
@@ -49,12 +49,7 @@ export default Login = () => {
 				placeholder="Digite sua senha"
 			/>
 
-			<TouchableOpacity
-				style={styles.botao}
-				onPress={() => {
-					clicou();
-				}}
-			>
+			<TouchableOpacity style={styles.botao} onPress={handleLogin}>
 				<Text style={styles.botaoText}>Login</Text>
 			</TouchableOpacity>
 		</View>
