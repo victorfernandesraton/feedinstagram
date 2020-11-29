@@ -11,16 +11,20 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { useLogin } from "../components/login/Login-context";
+import { validation } from "../components/login/Login-validation";
 
 export default Login = () => {
 	const { navigate } = useNavigation();
 	const [login, setLogin] = useLogin();
 	const [email, setEmail] = useState("");
+	const [error, setError] = useState({});
 
 	clicou = () => {
-		Alert.alert("Você fez login", "Usuario e senha estão corretos!");
-		setLogin({ logged: true, user: { email } });
-		navigate("feed");
+		validation(email, setError)
+
+		// Alert.alert("Você fez login", "Usuario e senha estão corretos!");
+		// setLogin({ logged: true, user: { email } });
+		// navigate("feed");
 	};
 
 	return (
@@ -36,6 +40,9 @@ export default Login = () => {
 				value={email}
 				onChangeText={(text) => setEmail(text)}
 			/>
+			
+	{error.email && (<Text>Error de email</Text>)}
+
 
 			<TextInput
 				style={styles.input}
@@ -46,7 +53,7 @@ export default Login = () => {
 			<TouchableOpacity
 				style={styles.botao}
 				onPress={() => {
-					this.clicou();
+					clicou();
 				}}
 			>
 				<Text style={styles.botaoText}>Login</Text>
