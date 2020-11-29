@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useReducer } from "react";
 
 import FeedView from "../components/Feed/FeedView-Container";
 import Reducer, { initialState } from "../components/Feed/Feed-reducer";
-import { fetchPost } from "../components/Feed/Feed-action";
+import { getPost } from "../components/Feed/Feed-action";
 import { dispatchTypes } from "../components/Feed/Feed-constants";
 export default function Feed({ route }) {
 	const scenary = route?.params?.scenary;
@@ -18,7 +18,7 @@ export default function Feed({ route }) {
 	const loadMore = useCallback(() => {
 		if (loading) return;
 		if (scenary != "single-feed") {
-			fetchPost(dispatch, { page, limit, total, loading });
+			getPost(dispatch, { page, limit, total, loading });
 		}
 	}, [page, loading, limit, id, scenary]);
 
@@ -29,7 +29,7 @@ export default function Feed({ route }) {
 				type: dispatchTypes.RESET,
 			});
 
-			fetchPost(dispatch, {
+			getPost(dispatch, {
 				page: 1,
 				limit: scenary == "single-feed" ? 1 : 4,
 				loading,
@@ -45,7 +45,7 @@ export default function Feed({ route }) {
 		if (scenary == "single-feed") {
 			params = { feedId: id };
 		}
-		fetchPost(dispatch, {
+		getPost(dispatch, {
 			page: 1,
 			limit: scenary == "single-feed" ? 1 : 4,
 			loading,

@@ -1,6 +1,7 @@
 export const dispatchTypes = {
 	LOADING: "LOADING",
 	SUCESS: "SUCESS",
+	SUCESS_REVERSE: "SUCESS_REVERSE",
 	ERROR: "ERROR",
 	RESET: "RESET",
 };

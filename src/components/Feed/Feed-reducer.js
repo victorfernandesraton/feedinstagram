@@ -29,6 +29,17 @@ export default (state = initialState, { type, payload }) => {
 				data: [...state.data, ...payload.data],
 			};
 		}
+		case dispatchTypes.SUCESS_REVERSE: {
+			return {
+				...state,
+				metadata: { ...state.metadata, total: payload.metadata.total },
+				error: null,
+				loading: false,
+				refreshing: false,
+				called: true,
+				data: [...payload.data, ...state.data],
+			};
+		}
 		case dispatchTypes.ERROR:
 			return {
 				...state,

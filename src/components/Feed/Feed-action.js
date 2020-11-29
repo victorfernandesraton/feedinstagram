@@ -1,12 +1,12 @@
 import axios from "axios";
 import { dispatchTypes } from "./Feed-constants";
-export const fetchPost = async (
+export const fetchPost = typedispatch => async (
 	dispatch,
 	{ page, limit, loading, total, params = {} }
 ) => {
 	if (loading) return;
 	dispatch({
-		type: dispatchTypes.LOADING,
+		type: typedispatch.LOADING,
 	});
 	if (total == page * limit) return;
 
@@ -32,7 +32,7 @@ export const fetchPost = async (
 		const data = response.data.items;
 		const totalItems = response.data.total;
 		dispatch({
-			type: dispatchTypes.SUCESS,
+			type: typedispatch.SUCESS,
 			payload: {
 				data: data,
 				metadata: {
@@ -45,8 +45,15 @@ export const fetchPost = async (
 	} catch (error) {
 		console.log(error);
 		dispatch({
-			type: dispatchTypes.ERROR,
+			type: typedispatch.ERROR,
 			payload: { error },
 		});
 	}
 };
+
+export const getPost = fetchPost({
+	SUCESS: dispatchTypes.SUCESS,
+	ERROR: dispatchTypes.ERROR,
+	LOADING: dispatchTypes.LOADING,
+})
+
