@@ -1,4 +1,4 @@
-import axios from "axios";
+import { apiMock } from "../../utils/request";
 import { dispatchTypes } from "./Feed-constants";
 export const fetchPost = (typedispatch) => async (
 	dispatch,
@@ -10,7 +10,7 @@ export const fetchPost = (typedispatch) => async (
 	});
 	if (total == page * limit) return;
 
-	let url = `https://5fbc585cc09c200016d419e5.mockapi.io/instagram-clone/post?page=${page}&limit=${limit}`;
+	let url = `/post?page=${page}&limit=${limit}`;
 
 	if (params?.feedId) {
 		url = `${url}&id=${params.feedId}`;
@@ -27,7 +27,7 @@ export const fetchPost = (typedispatch) => async (
 	}
 
 	try {
-		const response = await axios.get(url);
+		const response = await apiMock.get(url);
 
 		const data = response.data.items;
 		const totalItems = response.data.total;
