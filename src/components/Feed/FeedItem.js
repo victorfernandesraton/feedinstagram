@@ -1,31 +1,16 @@
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 
-import { Loading } from "../../baseCSS/styles";
-
-import { Avatar, Description, Header, Name, Post } from "./style";
+import { Description, Name, Post } from "./style";
 import LazyImage from "../LazyImage";
 
-
 import CommentView from "../Coment/CommentView-Container";
-import Reducer, { initialState } from "../user/User-reducer";
-import { fetchUser } from "../user/User-action";
-export default FeedItem = ({ item, viewable, scenary }) => {
-	const [{ user, loading }, dispatch] = useReducer(Reducer, initialState);
-	useEffect(() => {
-		fetchUser(dispatch, { id: item.author });
-	}, []);
 
+import UserHeader from "../user/UserHeader";
+
+export default FeedItem = ({ item, viewable, scenary }) => {
 	return (
 		<Post>
-			{user && !loading ? (
-				<Header>
-					<Avatar source={{ uri: user.avatar }} />
-					<Name>{user.name}</Name>
-				</Header>
-			) : (
-				<Loading />
-			)}
-
+			<UserHeader id={item.author} />
 			{scenary === "feed" && (
 				<LazyImage
 					aspectRatio={item.aspectRatio}

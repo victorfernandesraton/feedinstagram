@@ -1,16 +1,12 @@
 import React from "react";
-import { Avatar, Description, Header, Name, Post } from "./style";
-import authorJSON from "../../mocks/user.json";
+import { Description, Name, Post } from "./style";
+
+import UserHeader from "../user/UserHeader";
 
 export default FeedItem = ({ item }) => {
-	const author = authorJSON.find((i) => i.id == item.author);
-
 	return (
 		<Post>
-			<Header>
-				<Avatar source={{ uri: author.avatar }} />
-				<Name>{author.name}</Name>
-			</Header>
+			<UserHeader id={item.author} />
 			<Description>
 				<Name>{item.author.name}</Name> {item.description}
 			</Description>
