@@ -6,17 +6,15 @@ import LazyImage from "../LazyImage";
 import CommentView from "../Coment/CommentView-Container";
 
 import UserHeader from "../user/UserHeader";
+import CarouselVeiw from "../Carousel/CarouselView-container";
 
 export default FeedItem = ({ item, viewable, scenary }) => {
 	return (
 		<Post>
 			<UserHeader id={item.author} />
 			{scenary === "feed" && (
-				<LazyImage
-					aspectRatio={item.aspectRatio}
+				<CarouselVeiw
 					shouldLoad={viewable?.includes(item.id)}
-					smallSource={{ uri: item.small }}
-					source={{ uri: item.media }}
 				/>
 			)}
 

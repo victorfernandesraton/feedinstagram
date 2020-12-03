@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Animated } from "react-native";
+import { Animated, Dimensions } from "react-native";
 import { Small, Original } from "./styles";
 
 const AnimatedOriginal = Animated.createAnimatedComponent(Original);
@@ -10,6 +10,7 @@ export default function LazyImage({
 	shouldLoad = false,
 	aspectRatio = 1,
 }) {
+	const { width, height } = Dimensions.get("window");
 	const opacity = new Animated.Value(0);
 
 	const [loaded, setLoaded] = useState(false);
@@ -32,6 +33,7 @@ export default function LazyImage({
 
 	return (
 		<Small
+			style={{ width, height }}
 			source={smallSource}
 			aspect={aspectRatio}
 			resizeMode="contain"
