@@ -13,7 +13,7 @@ import {
 } from "./style";
 
 const CommentInput = ({ parent, onPost, total }) => {
-	const [{user}] = useLogin();
+	const [{ user }] = useLogin();
 	const [content, setContent] = useState("");
 	const [textHeight, setTextHeight] = useState(40);
 	const [{ loading }, dispatch] = useReducer(Reducer, initialState);

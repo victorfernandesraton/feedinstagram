@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import { FlatList } from "react-native";
 import LazyImage from "../LazyImage";
 
-export default function CarouselVeiw({data}) {
+export default function CarouselVeiw({ data }) {
 	const [index] = useState(0);
 	const indexRef = useRef(index);
 	indexRef.current = index;
@@ -13,7 +13,6 @@ export default function CarouselVeiw({data}) {
 		setViewable(changed.map(({ item }) => item.id));
 	}, []);
 
-	
 	return (
 		<FlatList
 			data={data}

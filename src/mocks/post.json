@@ -194,7 +194,7 @@
 	{
 		"id": 13,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
 				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
@@ -208,9 +208,9 @@
 	{
 		"id": 14,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
-				"type": "image",			
+				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
 				"small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
 				"aspectRatio": 0.834
@@ -222,7 +222,7 @@
 	{
 		"id": 15,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
 				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
@@ -236,7 +236,7 @@
 	{
 		"id": 16,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
 				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
@@ -250,7 +250,7 @@
 	{
 		"id": 17,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
 				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
@@ -264,7 +264,7 @@
 	{
 		"id": 18,
 		"type": "publication",
-		"medias":[
+		"medias": [
 			{
 				"type": "image",
 				"media": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",

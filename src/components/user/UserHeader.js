@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from "react";
-import { View } from "react-native";
 import { Avatar, Header, Name } from "./User-style";
 
 import Reducer, { initialState } from "./User-reducer";
