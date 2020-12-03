@@ -14,6 +14,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 			<UserHeader id={item.author} />
 			{scenary === "feed" && (
 				<CarouselVeiw
+					data={item?.medias || []}
 					shouldLoad={viewable?.includes(item.id)}
 				/>
 			)}
