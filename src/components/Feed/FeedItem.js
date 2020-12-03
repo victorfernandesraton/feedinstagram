@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useEffect, useReducer } from "react";
+
+import { Loading } from "../../baseCSS/styles";
+
 import { Avatar, Description, Header, Name, Post } from "./style";
 import LazyImage from "../LazyImage";
-import authorJSON from "../../mocks/user.json";
+
 
 import CommentView from "../Coment/CommentView-Container";
-
+import Reducer, { initialState } from "../user/User-reducer";
+import { fetchUser } from "../user/User-action";
 export default FeedItem = ({ item, viewable, scenary }) => {
-	const author = authorJSON.find((i) => i.id == item.author);
+	const [{ user, loading }, dispatch] = useReducer(Reducer, initialState);
+	useEffect(() => {
+		fetchUser(dispatch, { id: item.author });
+	}, []);
 
 	return (
 		<Post>
-			<Header>
-				<Avatar source={{ uri: author.avatar }} />
-				<Name>{author.name}</Name>
-			</Header>
+			{user && !loading ? (
+				<Header>
+					<Avatar source={{ uri: user.avatar }} />
+					<Name>{user.name}</Name>
+				</Header>
+			) : (
+				<Loading />
+			)}
 
 			{scenary === "feed" && (
 				<LazyImage
