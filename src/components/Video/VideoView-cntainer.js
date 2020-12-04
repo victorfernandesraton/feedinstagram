@@ -1,13 +1,12 @@
-// Load the module
-
-import React, { useCallback, useRef, useState } from "react";
-import { StyleSheet, Dimensions, Button, View } from "react-native";
+import React, { useCallback, useState } from "react";
+import { StyleSheet, Dimensions } from "react-native";
 import { Video } from "expo-av";
-
 import Icon from "react-native-vector-icons/MaterialIcons";
 
+import { VideoContainer, VideoControl } from "./style";
+
 const VideoView = ({ uri }) => {
-	const { width, height } = Dimensions.get("window");
+	const { width } = Dimensions.get("window");
 	const [play, setPlay] = useState(false);
 	const [muted, setMuted] = useState(false);
 
@@ -15,7 +14,7 @@ const VideoView = ({ uri }) => {
 	const handleMuted = useCallback(() => setMuted(!muted), [muted]);
 
 	return (
-		<View style={styles.container}>
+		<VideoContainer>
 			<Video
 				source={{
 					uri: uri,
@@ -26,9 +25,9 @@ const VideoView = ({ uri }) => {
 				resizeMode="cover"
 				shouldPlay={play}
 				isLooping
-				style={{ width, height: 300}}
+				style={{ width, height: 300 }}
 			/>
-			<View style={styles.controlBar}>
+			<VideoControl>
 				<Icon
 					name={muted ? "volume-mute" : "volume-up"}
 					size={45}
@@ -41,28 +40,8 @@ const VideoView = ({ uri }) => {
 					color="white"
 					onPress={handlePlay}
 				/>
-			</View>
-		</View>
+			</VideoControl>
+		</VideoContainer>
 	);
 };
 export default VideoView;
-
-const styles = StyleSheet.create({
-	container: {
-		 flex: 1,
-		 backgroundColor: '#fff',
-		 alignItems: 'center',
-		 justifyContent: 'center',
-	},
-	controlBar: {
-		 position: 'absolute',
-		 bottom: 0,
-		 left: 0,
-		 right: 0,
-		 height: 45,
-		 flexDirection: 'row',
-		 alignItems: 'center',
-		 justifyContent: 'center',
-		 backgroundColor: "rgba(0, 0, 0, 0.5)",
-	}
-});
