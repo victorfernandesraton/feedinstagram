@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from "styled-components/native";
 export const VideoContainer = styled.View`
 	flex: 1;
 	background-color: #fafafafa;
@@ -17,4 +17,3 @@ export const VideoControl = styled.View`
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.5);
 `;
-

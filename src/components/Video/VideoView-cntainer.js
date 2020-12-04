@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { Dimensions } from "react-native";
 import { Video } from "expo-av";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
