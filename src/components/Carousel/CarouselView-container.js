@@ -1,6 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { FlatList } from "react-native";
 import LazyImage from "../LazyImage";
+import VideoView from "../Video/VideoView-cntainer";
 
 export default function CarouselVeiw({ data }) {
 	const [index] = useState(0);
@@ -22,7 +23,9 @@ export default function CarouselVeiw({ data }) {
 				viewAreaCoveragePercentThreshold: 10,
 			}}
 			renderItem={({ item }) => {
-				return (
+				return item.type == "video" ? (
+					<VideoView uri={item.media} />
+				) : (
 					<LazyImage
 						aspectRatio={item.aspectRatio}
 						shouldLoad={viewable?.includes(item.id)}
