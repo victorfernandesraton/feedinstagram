@@ -60,7 +60,7 @@ const LikeView = ({ item, scenary = "feed" }) => {
 			</LinkLabel>
 			{total > 0 && (
 				<Link to={`/likes?id=${item.id}`}>
-					<LikeLink scenary={scenary} >Ver curtidas</LikeLink>
+					<LikeLink scenary={scenary}>Ver curtidas</LikeLink>
 				</Link>
 			)}
 		</LikesViewContainer>

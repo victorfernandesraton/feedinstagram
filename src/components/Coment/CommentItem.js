@@ -9,7 +9,7 @@ export default FeedItem = ({ item }) => {
 		<Post>
 			<UserHeader user={item.author} />
 			<Description>{item.description}</Description>
-			<LikeView item={item} scenary='comment' />
+			<LikeView item={item} scenary="comment" />
 		</Post>
 	);
 };

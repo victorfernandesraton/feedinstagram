@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useReducer, useCallback } from "react";
-import { Button, FlatList, TextInput, View, Text, TouchableOpacity } from "react-native";
+import {
+	Button,
+	FlatList,
+	TextInput,
+	View,
+	Text,
+	TouchableOpacity,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from "react-native-vector-icons/FontAwesome";
 import { Loading } from "../../baseCSS/styles";
 
 import CommentInput from "./CommentInput";
@@ -69,7 +76,7 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 			{total >= limit && total != 0 && (
 				<CommentMoreContainer onPress={onButtonMore}>
 					<CommentMoreText>Ver mais comentários</CommentMoreText>
-					<Icon name='comment-o' size={24} />
+					<Icon name="comment-o" size={24} />
 				</CommentMoreContainer>
 			)}
 		</>

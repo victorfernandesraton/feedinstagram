@@ -10,7 +10,11 @@ function LikeButton({ isLike, loading, onClick, scenary }) {
 				title={loading ? "Carregando" : isLike ? "Descurtir" : "Curtir"}
 				onPress={onClick}
 			>
-				<Icon name={isLike ? "heart" : "hearto"} size={scenary== 'feed' ? 32 : 26} color={'red'} />
+				<Icon
+					name={isLike ? "heart" : "hearto"}
+					size={scenary == "feed" ? 32 : 26}
+					color={"red"}
+				/>
 			</TouchableOpacity>
 		</View>
 	);

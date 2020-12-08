@@ -21,7 +21,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 			)}
 
 			<Description>{item.description}</Description>
-			<LikeView item={item} scenary={scenary}/>
+			<LikeView item={item} scenary={scenary} />
 
 			{scenary.includes("feed") && (
 				<CommentView parentId={item.id} scenary={scenary} />
