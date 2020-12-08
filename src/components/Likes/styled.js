@@ -36,7 +36,7 @@ export const LikeMoreContainer = styled.TouchableOpacity`
 	align-items: center;
 `;
 
-export const LikeMoreText = styled.Text`
+export const 	LikeMoreText = styled.Text`
 	font-size: 16px;
 	padding: 16px;
 `;

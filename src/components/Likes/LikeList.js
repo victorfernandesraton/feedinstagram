@@ -22,6 +22,7 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 			limit: 2,
 			loading,
 			total,
+			pagination: true,
 			publicationId,
 		});
 	}, [page, limit, scenary, total, publicationId]);
