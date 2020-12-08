@@ -28,7 +28,7 @@ export default (state = initialState, { type, payload }) => {
 				refreshing: false,
 				called: true,
 				data: [...state.data, ...payload.data],
-				metadata: { ...state.metadata, total: payload.metadata.total },
+				metadata: { ...state.metadata, ...payload.metadata },
 			};
 		case dispatchTypes.DELETE:
 			return {

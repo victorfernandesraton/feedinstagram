@@ -26,15 +26,17 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 	}, [page, limit, scenary, total, publicationId]);
 
 	useEffect(() => {
-		getLike(dispatch, {
-			page: 1,
-			pagination: true,
-			limit: 5,
-			loading,
-			total,
-			publicationId,
-		});
-	}, []);
+		if (!called) {
+			getLike(dispatch, {
+				page: 1,
+				pagination: true,
+				limit: 5,
+				loading,
+				total,
+				publicationId,
+			});
+		}
+	}, [called]);
 
 	useEffect(() => {
 		setOptions({
