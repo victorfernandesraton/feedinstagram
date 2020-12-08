@@ -17,11 +17,26 @@ export const LikesViewContainer = styled.View`
 `;
 
 export const LinkLabel = styled.Text`
-	font-size: ${props => props?.scenary === 'feed' ?16 : 12};
-`
+	font-size: ${(props) => (props?.scenary === "feed" ? 16 : 12)};
+`;
 export const LikeLink = styled.Text`
 	margin-left: 8px;
-	font-size: ${props => props?.scenary === 'feed' ?16 : 12};	
+	font-size: ${(props) => (props?.scenary === "feed" ? 16 : 12)};
 	text-decoration: underline;
 	text-decoration-style: solid;
-`
+`;
+
+export const LikeMoreContainer = styled.TouchableOpacity`
+	display: flex;
+	background-color: #dcdcdc;
+	border-radius: 2;
+	margin: 16px;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+`;
+
+export const LikeMoreText = styled.Text`
+	font-size: 16px;
+	padding: 16px;
+`;

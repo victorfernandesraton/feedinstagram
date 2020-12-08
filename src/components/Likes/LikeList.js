@@ -1,12 +1,15 @@
 import React, { useEffect, useReducer, useCallback } from "react";
 import { Button, FlatList } from "react-native";
+import Icon from "react-native-vector-icons/AntDesign";
+
 import Reducer, { initialState } from "./Like-reducer";
 import { getLike } from "./Like-action";
 import LikeListItem from "./LikeListItem";
 import { Loading } from "../../baseCSS/styles";
 
-const LikeList = ({ publicationId, scenary = "feed" }) => {
+import { LikeMoreContainer, LikeMoreText } from "./styled";
 
+const LikeList = ({ publicationId, scenary = "feed" }) => {
 	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
 		initialState
@@ -16,7 +19,7 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 	const onButtonMore = useCallback(() => {
 		getLike(dispatch, {
 			page,
-			limit: 5,
+			limit: 2,
 			loading,
 			total,
 			publicationId,
@@ -28,7 +31,7 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 			getLike(dispatch, {
 				page: 1,
 				pagination: true,
-				limit: 5,
+				limit: 2,
 				loading,
 				total,
 				publicationId,
@@ -48,7 +51,10 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 				/>
 			)}
 			{total >= limit && total != 0 && (
-				<Button title="Ver mais" onPress={onButtonMore} />
+				<LikeMoreContainer onPress={onButtonMore}>
+					<LikeMoreText>Ver mais curtidas</LikeMoreText>
+					<Icon name="hearto" size={32} />
+				</LikeMoreContainer>
 			)}
 		</>
 	);
