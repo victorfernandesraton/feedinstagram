@@ -29,7 +29,7 @@ export const LikeLink = styled.Text`
 export const LikeMoreContainer = styled.TouchableOpacity`
 	display: flex;
 	background-color: #dcdcdc;
-	border-radius: 2;
+	border-radius: 2px;
 	margin: 16px;
 	justify-content: center;
 	flex-direction: row;

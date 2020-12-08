@@ -45,8 +45,8 @@ export const CommentTextInput = styled.TextInput`
 	height: ${(props) => (props.height > 32 ? props.height : 32)};
 	margin: 8px;
 	background-color: #c2c2c2;
-	border-radius: 16;
-	font-size: 16;
+	border-radius: 16px;
+	font-size: 16px;
 	text-align: justify;
 	align-self: center;
 `;
@@ -54,28 +54,28 @@ export const CommentTextInput = styled.TextInput`
 export const CommentInputContainer = styled.View`
 	display: flex;
 	flex-direction: row;
-	height: 40;
+	height: 40px;
 	margin: 8px;
 	width: 90%;
 `;
 
 export const CommentInputButton = styled.TouchableOpacity`
 	display: flex;
-	height: 32;
-	margin-left: 8;
+	height: 32px;
+	margin-left: 8px;
 	/* width: 25%; */
 	align-self: center;
 `;
 
 export const CommentInputButtonText = styled.Text`
 	color: #fafafa;
-	font-size: 16;
+	font-size: 16px;
 `;
 
 export const CommentMoreContainer = styled.TouchableOpacity`
 	display: flex;
 	background-color: #dcdcdc;
-	border-radius: 2;
+	border-radius: 2px;
 	margin: 16px;
 	justify-content: center;
 	flex-direction: row;

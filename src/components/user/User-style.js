@@ -14,5 +14,5 @@ export const Avatar = styled.Image`
 `;
 
 export const Name = styled.Text`
-	font-weight: 600;
+	font-weight: 600px;
 `;
