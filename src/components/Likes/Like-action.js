@@ -16,7 +16,6 @@ export const fetchLike = (typedispatch) => async (
 		url = `${url}&author=${userId}`;
 	}
 
-	console.log(url)
 	try {
 		const response = await apiMock.get(url);
 
@@ -42,7 +41,45 @@ export const fetchLike = (typedispatch) => async (
 	}
 };
 
+export const createLike = (typedispatch) => async (
+	dispatch,
+	{ publicationId, userId, total, loading }
+) => {
+	if (loading) return;
+	dispatch({
+		type: typedispatch.LOADING,
+	});
+	const url = `/likes`;
+	try {
+		const request = await apiMock.post(url, {
+			author: userId,
+			post: publicationId,
+		});
+		dispatch({
+			type: typedispatch.SUCESS,
+			payload: {
+				data: [request.data],
+				metadata: {
+					total: total + 1,
+				},
+			},
+		});
+	} catch (error) {
+		console.log(error);
+		dispatch({
+			type: typedispatch.ERROR,
+			payload: { error },
+		});
+	}
+};
+
 export const getLike = fetchLike({
+	SUCESS: dispatchTypes.SUCESS,
+	ERROR: dispatchTypes.ERROR,
+	LOADING: dispatchTypes.LOADING,
+});
+
+export const postLike = createLike({
 	SUCESS: dispatchTypes.SUCESS,
 	ERROR: dispatchTypes.ERROR,
 	LOADING: dispatchTypes.LOADING,

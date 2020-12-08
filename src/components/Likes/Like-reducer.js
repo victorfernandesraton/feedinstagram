@@ -18,7 +18,8 @@ export default (state = initialState, { type, payload }) => {
 	switch (type) {
 		case dispatchTypes.LOADING:
 			return { ...state, loading: true };
-		case dispatchTypes.SUCESS: {
+		case dispatchTypes.SUCESS:
+		case dispatchTypes.CREATED:
 			return {
 				...state,
 				...payload,
@@ -27,8 +28,21 @@ export default (state = initialState, { type, payload }) => {
 				refreshing: false,
 				called: true,
 				data: [...state.data, ...payload.data],
+				metadata: { ...state.metadata, total: payload.metadata.total },
 			};
-		}
+		case dispatchTypes.DELETE:
+			return {
+				...state,
+				error: null,
+				loading: false,
+				refreshing: false,
+				called: true,
+				data: [...state.data.filter((i) => i.id != payload.id)],
+				metadata: {
+					...state.metadata,
+					total: state?.metadata?.total == 0 ? 0 : state?.metadata?.total - 1,
+				},
+			};
 		case dispatchTypes.ERROR:
 			return {
 				...state,
