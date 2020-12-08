@@ -25,6 +25,7 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 	useEffect(() => {
 		getLike(dispatch, {
 			page: 1,
+			pagination: true,
 			limit: 5,
 			loading,
 			total,

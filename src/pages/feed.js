@@ -31,7 +31,7 @@ export default function Feed({ route }) {
 
 			getPost(dispatch, {
 				page: 1,
-				limit: scenary == "single-feed" ? 1 : 4,
+				limit: scenary == "single-feed" ? 1 : 2,
 				loading,
 				total: 0,
 				params: {},
@@ -47,7 +47,7 @@ export default function Feed({ route }) {
 		}
 		getPost(dispatch, {
 			page: 1,
-			limit: scenary == "single-feed" ? 1 : 4,
+			limit: scenary == "single-feed" ? 1 : 2,
 			loading,
 			total,
 			params,

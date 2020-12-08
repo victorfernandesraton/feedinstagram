@@ -17,8 +17,8 @@ export const getUser = (typedispatch) => async (dispacth, { id }) => {
 			payload: { user: { ...data?.items?.[0] } },
 		});
 	} catch (error) {
+		console.warn(url);
 		console.log(error);
-		console.log('here')
 		dispacth({
 			type: typedispatch.ERRO,
 			payload: { error },

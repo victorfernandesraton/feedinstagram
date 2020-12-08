@@ -1,14 +1,13 @@
-import React, { useCallback, useEffect, useReducer } from "react";
-import { View } from "react-native";
+import React from "react";
+import { Container } from "../baseCSS/styles";
 
 import LikeList from "../components/Likes/LikeList";
 
 export default function Like({ route }) {
 	const id = route?.params?.id;
-	console.log(route)
 	return (
-		<View>
+		<Container>
 			<LikeList publicationId={id} />
-		</View>
+		</Container>
 	);
 }

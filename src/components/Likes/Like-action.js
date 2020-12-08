@@ -3,7 +3,7 @@ import { dispatchTypes } from "./Like-constants";
 
 export const fetchLike = (typedispatch) => async (
 	dispatch,
-	{ publicationId, userId, page, limit, total, loading }
+	{ publicationId, page, limit, total, loading, pagination = false }
 ) => {
 	if (loading) return;
 	dispatch({
@@ -11,9 +11,9 @@ export const fetchLike = (typedispatch) => async (
 	});
 	if (total == page * limit) return;
 
-	let url = `/likes?page=${page}&limit=${limit}&post=${publicationId}`;
-	if (userId) {
-		url = `${url}&author=${userId}`;
+	let url = `/likes?post=${publicationId}`;
+	if (pagination) {
+		url = `${url}&page=${page}&limit=${limit}`;
 	}
 
 	try {
@@ -33,6 +33,7 @@ export const fetchLike = (typedispatch) => async (
 			},
 		});
 	} catch (error) {
+		console.warn(url);
 		console.log(error);
 		dispatch({
 			type: typedispatch.ERROR,
@@ -65,6 +66,7 @@ export const createLike = (typedispatch) => async (
 			},
 		});
 	} catch (error) {
+		console.warn(url);
 		console.log(error);
 		dispatch({
 			type: typedispatch.ERROR,
@@ -82,17 +84,18 @@ export const deleteLike = (typedispatch) => async (
 	});
 	const url = `/likes/${id}`;
 	try {
-		const request = await apiMock.delete(url)
+		const request = await apiMock.delete(url);
 		dispatch({
 			type: typedispatch.SUCESS,
 			payload: {
-				data: [request.data],
+				id: request.data.id,
 				metadata: {
 					total: total + 1,
 				},
 			},
 		});
 	} catch (error) {
+		console.warn(url);
 		console.log(error);
 		dispatch({
 			type: typedispatch.ERROR,
@@ -117,4 +120,4 @@ export const disLike = deleteLike({
 	SUCESS: dispatchTypes.DELETE,
 	ERROR: dispatchTypes.ERROR,
 	LOADING: dispatchTypes.LOADING,
-})
+});

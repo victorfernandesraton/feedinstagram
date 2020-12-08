@@ -9,6 +9,7 @@ import UserHeader from "../user/UserHeader";
 import CarouselVeiw from "../Carousel/CarouselView-container";
 import { View, Text } from "react-native";
 import LikeButton from "../Likes/LikeButton";
+import LikeView from "../Likes/LikeView-container";
 
 export default FeedItem = ({ item, viewable, scenary }) => {
 	return (
@@ -24,13 +25,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 			<Description>
 				<Name>{item.author.name}</Name> {item.description}
 			</Description>
-
-			<View>
-				<LikeButton postId={item.id} />
-				<Link to={`/likes?id=${item.id}`}>
-					<Text>Ver curtidas</Text>
-				</Link>
-			</View>
+			<LikeView item={item} />
 
 			{scenary.includes("feed") && (
 				<CommentView parentId={item.id} scenary={scenary} />

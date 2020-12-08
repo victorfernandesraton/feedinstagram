@@ -21,7 +21,7 @@ export const fetchPost = async (
 		const response = await apiMock.get(url);
 
 		const data = response.data.items;
-		const totalItems = response.data.total;
+		const totalItems = response.data.count;
 		dispatch({
 			type: dispatchTypes.SUCESS,
 			payload: {

@@ -5,7 +5,7 @@ import { LikeListItemContainer } from "./styled";
 
 import Header from "../user/UserHeader";
 
-const LikeListItem = ({item}) => {
+const LikeListItem = ({ item }) => {
 	return (
 		<LikeListItemContainer>
 			<Header id={item.author} />
