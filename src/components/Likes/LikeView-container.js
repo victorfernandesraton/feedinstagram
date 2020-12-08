@@ -8,8 +8,9 @@ import { disLike, getLike, postLike } from "./Like-action";
 import Reducer, { initialState } from "./Like-reducer";
 
 import LikeButton from "./LikeButton";
+import { LikeLink, LikesViewContainer, LinkLabel } from "./styled";
 
-const LikeView = ({ item }) => {
+const LikeView = ({ item, scenary = "feed" }) => {
 	const [{ user }] = useLogin();
 	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
@@ -45,14 +46,24 @@ const LikeView = ({ item }) => {
 	}, [isLike, loading, total]);
 
 	return (
-		<Container>
-			<LikeButton isLike={isLike} loading={loading} onClick={handleClick} />
+		<LikesViewContainer>
+			<LikeButton
+				isLike={isLike}
+				loading={loading}
+				onClick={handleClick}
+				scenary={scenary}
+			/>
+			<LinkLabel>
+				{total == 0
+					? "Seja o primeiro a curtir"
+					: `${total} ${total > 1 ? "curtidas" : "curtida"}`}
+			</LinkLabel>
 			{total > 0 && (
 				<Link to={`/likes?id=${item.id}`}>
-					<Text>Ver curtidas</Text>
+					<LikeLink>Ver curtidas</LikeLink>
 				</Link>
 			)}
-		</Container>
+		</LikesViewContainer>
 	);
 };
 
