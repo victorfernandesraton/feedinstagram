@@ -2,25 +2,37 @@
 	{
 		"id": "1",
 		"createdAt": "2020-11-23T23:46:26.534Z",
-		"author": "1",
+		"author": {
+			"name": "Delilah Ortiz",
+			"avatar": "https://avatars0.githubusercontent.com/u/2254731?s=50&v=4"
+		},
 		"post": "1"
 	},
 	{
 		"id": "2",
 		"createdAt": "2020-11-23T14:53:29.574Z",
-		"author": "2",
+		"author": {
+			"name": "Daniela Hickle",
+			"avatar": "https://avatars0.githubusercontent.com/u/4669899?s=50&v=4"
+		},
 		"post": "2"
 	},
 	{
 		"id": "3",
 		"createdAt": "2020-11-23T09:12:14.809Z",
-		"author": "3",
+		"author": {
+			"name": "Tom Monahan",
+			"avatar": "https://avatars2.githubusercontent.com/u/16545335?s=50&v=4"
+		},
 		"post": "3"
 	},
 	{
 		"id": "4",
 		"createdAt": "2020-11-23T20:07:25.881Z",
-		"author": "4",
+		"author": {
+			"name": "Eudora Hegmann",
+			"avatar": "https://avatars3.githubusercontent.com/u/7268910?s=50&v=4"
+		},
 		"post": "4"
 	}
 ]

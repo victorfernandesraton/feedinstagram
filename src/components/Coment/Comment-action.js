@@ -45,7 +45,7 @@ export const postComment = async (dispatch, { author, content, parent }) => {
 	const sendData = {
 		...defaultCommentData,
 		description: content,
-		author: author?.id,
+		author: { name: author.name, avatar: author.avatar },
 		parent: parent?.id,
 	};
 

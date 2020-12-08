@@ -5,16 +5,14 @@ import LazyImage from "../LazyImage";
 
 import CommentView from "../Coment/CommentView-Container";
 
-import UserHeader from "../user/UserHeader";
 import CarouselVeiw from "../Carousel/CarouselView-container";
-import { View, Text } from "react-native";
-import LikeButton from "../Likes/LikeButton";
 import LikeView from "../Likes/LikeView-container";
+import UserHeader from "../user/UserHeader";
 
 export default FeedItem = ({ item, viewable, scenary }) => {
 	return (
 		<Post>
-			<UserHeader id={item.author} />
+			<UserHeader user={item.author} />
 			{scenary === "feed" && (
 				<CarouselVeiw
 					data={item?.medias || []}
@@ -22,9 +20,7 @@ export default FeedItem = ({ item, viewable, scenary }) => {
 				/>
 			)}
 
-			<Description>
-				<Name>{item.author.name}</Name> {item.description}
-			</Description>
+			<Description>{item.description}</Description>
 			<LikeView item={item} />
 
 			{scenary.includes("feed") && (

@@ -21,7 +21,7 @@ const CommentInput = ({ parent, onPost, total }) => {
 	const sendComment = useCallback(
 		async (content) => {
 			const response = await postComment(dispatch, {
-				author: { id: user.id },
+				author: { ...user },
 				content: content,
 				parent,
 			});

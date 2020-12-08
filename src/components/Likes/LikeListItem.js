@@ -1,14 +1,13 @@
 import React from "react";
 import { Text } from "react-native";
+import UserHeader from "../user/UserHeader";
 
 import { LikeListItemContainer } from "./styled";
-
-import Header from "../user/UserHeader";
 
 const LikeListItem = ({ item }) => {
 	return (
 		<LikeListItemContainer>
-			<Header id={item.author} />
+			<UserHeader user={item.author} />
 			<Text>Curtiu isso</Text>
 		</LikeListItemContainer>
 	);
