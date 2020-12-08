@@ -71,3 +71,18 @@ export const CommentInputButtonText = styled.Text`
 	color: #fafafa;
 	font-size: 16;
 `;
+
+export const CommentMoreContainer =styled.TouchableOpacity`
+	display: flex;
+	background-color: #dcdcdc;
+	border-radius: 2;
+	margin: 16px;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+`;
+
+export const CommentMoreText = styled.Text`
+	font-size: 16px;
+	padding: 16px;
+`;
