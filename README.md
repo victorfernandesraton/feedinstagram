@@ -60,8 +60,8 @@ yarn android
 		"name": "Prof Aristoteles",
 		"avatar": "https://avatars2.githubusercontent.com/u/18669649?s=400&u=de6c0fd137d146d05d15e5d01fb51bb7f7f51882&v=4",
 		"age": "2020-03-12T19:44:53.753Z",
-		"mail": "Pearlie.Rogahn@gmail.com",
-		"password": "R4htnCCm2FHRzLo"
+		"mail": "professor@gmail.com",
+		"password": "professoraristoteles"
 	}
 ]
 ```
