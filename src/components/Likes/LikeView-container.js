@@ -23,9 +23,7 @@ const LikeView = ({ item, scenary = "feed" }) => {
 	useEffect(() => {
 		if (!loading && !called) {
 			getLike(dispatch, {
-				limit: 1,
 				loading,
-				page: 1,
 				publicationId: item.id,
 				total,
 			});
