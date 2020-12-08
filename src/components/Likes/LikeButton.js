@@ -3,20 +3,19 @@ import React, { useState, useCallback, useEffect } from "react";
 import { useReducer } from "react";
 import { View, Button, Text } from "react-native";
 import { useLogin } from "../login/Login-context";
-import { getLike, postLike } from "./Like-action";
+import { disLike, getLike, postLike } from "./Like-action";
 import Reducer, { initialState } from "./Like-reducer";
 
 function LikeButton({ postId }) {
 	const [{ user }] = useLogin();
 
-	const [{ metadata, loading, called }, dispatch] = useReducer(
+	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
 		initialState
 	);
-	const {total} = metadata
+	const { total } = metadata;
 
 	const handleLike = useCallback(() => {
-		console.log(total)
 		if (total < 1) {
 			postLike(dispatch, {
 				publicationId: postId,
@@ -24,6 +23,8 @@ function LikeButton({ postId }) {
 				total,
 				loading,
 			});
+		} else {
+			disLike(dispatch, { id: data?.[0].id, total, loading });
 		}
 	}, [total, postId, user, loading]);
 
@@ -41,7 +42,7 @@ function LikeButton({ postId }) {
 	return (
 		<View>
 			<Button
-				title={loading ? 'Carregando' : !total ? "Curtir" : "Descurtir"}
+				title={loading ? "Carregando" : !total ? "Curtir" : "Descurtir"}
 				onPress={handleLike}
 			/>
 		</View>

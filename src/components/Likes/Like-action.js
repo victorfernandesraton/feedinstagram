@@ -72,6 +72,34 @@ export const createLike = (typedispatch) => async (
 		});
 	}
 };
+export const deleteLike = (typedispatch) => async (
+	dispatch,
+	{ id, total, loading }
+) => {
+	if (loading) return;
+	dispatch({
+		type: typedispatch.LOADING,
+	});
+	const url = `/likes/${id}`;
+	try {
+		const request = await apiMock.delete(url)
+		dispatch({
+			type: typedispatch.SUCESS,
+			payload: {
+				data: [request.data],
+				metadata: {
+					total: total + 1,
+				},
+			},
+		});
+	} catch (error) {
+		console.log(error);
+		dispatch({
+			type: typedispatch.ERROR,
+			payload: { error },
+		});
+	}
+};
 
 export const getLike = fetchLike({
 	SUCESS: dispatchTypes.SUCESS,
@@ -84,3 +112,9 @@ export const postLike = createLike({
 	ERROR: dispatchTypes.ERROR,
 	LOADING: dispatchTypes.LOADING,
 });
+
+export const disLike = deleteLike({
+	SUCESS: dispatchTypes.DELETE,
+	ERROR: dispatchTypes.ERROR,
+	LOADING: dispatchTypes.LOADING,
+})
