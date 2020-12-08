@@ -16,7 +16,7 @@ const LikeView = ({ item }) => {
 		initialState
 	);
 
-	const isLike = data.find((i) => i.author == user.id)
+	const isLike = data.find((i) => i.author == user.id);
 
 	const { total } = metadata;
 	useEffect(() => {
@@ -46,7 +46,7 @@ const LikeView = ({ item }) => {
 
 	return (
 		<Container>
-			<LikeButton isLike={isLike} loading={loading} onClick={handleClick}/>
+			<LikeButton isLike={isLike} loading={loading} onClick={handleClick} />
 			{total > 0 && (
 				<Link to={`/likes?id=${item.id}`}>
 					<Text>Ver curtidas</Text>

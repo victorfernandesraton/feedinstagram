@@ -17,9 +17,7 @@ const UserHeaderView = ({ id }) => {
 		return <Loading />;
 	}
 
-	return (
-		<UserHeader user={user} />
-	);
+	return <UserHeader user={user} />;
 };
 
 export default UserHeaderView;

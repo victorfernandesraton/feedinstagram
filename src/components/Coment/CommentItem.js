@@ -8,9 +8,7 @@ export default FeedItem = ({ item }) => {
 	return (
 		<Post>
 			<UserHeader user={item.author} />
-			<Description>
-				{item.description}
-			</Description>
+			<Description>{item.description}</Description>
 			<LikeView item={item} />
 		</Post>
 	);

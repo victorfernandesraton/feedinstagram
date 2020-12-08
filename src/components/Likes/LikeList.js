@@ -37,7 +37,7 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 		<>
 			{total > 0 && (
 				<FlatList
-					data={data}	
+					data={data}
 					keyExtractor={(item) => String(item.id)}
 					renderItem={LikeListItem}
 					ListFooterComponent={loading && <Loading />}
