@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Feed from "./src/pages/feed";
 import Login from "./src/pages/login";
 import { LoginProvider } from "./src/components/login/Login-context";
+import Like from "./src/pages/likes";
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,9 @@ export default function App() {
 						}}/>
 						<Stack.Screen name="single-feed" component={Feed} options={{
 							title: 'Comentários'
+						}}/>
+						<Stack.Screen name="likes" component={Like} options={{
+							title: 'Curtidas'
 						}}/>
 					</Stack.Navigator>
 				</NavigationContainer>

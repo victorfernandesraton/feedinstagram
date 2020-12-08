@@ -18,6 +18,7 @@ export const getUser = (typedispatch) => async (dispacth, { id }) => {
 		});
 	} catch (error) {
 		console.log(error);
+		console.log('here')
 		dispacth({
 			type: typedispatch.ERRO,
 			payload: { error },
