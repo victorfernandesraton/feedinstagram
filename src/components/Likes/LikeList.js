@@ -4,8 +4,11 @@ import Reducer, { initialState } from "./Like-reducer";
 import { getLike } from "./Like-action";
 import LikeListItem from "./LikeListItem";
 import { Loading } from "../../baseCSS/styles";
+import { useNavigation } from "@react-navigation/native";
 
 const LikeList = ({ publicationId, scenary = "feed" }) => {
+	const { setOptions } = useNavigation();
+
 	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
 		initialState
@@ -32,6 +35,12 @@ const LikeList = ({ publicationId, scenary = "feed" }) => {
 			publicationId,
 		});
 	}, []);
+
+	useEffect(() => {
+		setOptions({
+			title: `Likes - ${total}`,
+		});
+	}, [total]);
 
 	return (
 		<>

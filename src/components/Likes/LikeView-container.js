@@ -16,7 +16,7 @@ const LikeView = ({ item }) => {
 		initialState
 	);
 
-	const isLike = data.find((i) => i.author == user.id);
+	const isLike = data.find((i) => i.author.id == user.id);
 
 	const { total } = metadata;
 	useEffect(() => {
@@ -37,7 +37,7 @@ const LikeView = ({ item }) => {
 				loading,
 				publicationId: item.id,
 				total,
-				userId: user.id,
+				user,
 			});
 		} else {
 			disLike(dispatch, { id: isLike?.id, loading, total });

@@ -5,6 +5,7 @@ import UserHeader from "../user/UserHeader";
 import { LikeListItemContainer } from "./styled";
 
 const LikeListItem = ({ item }) => {
+	console.log(item)
 	return (
 		<LikeListItemContainer>
 			<UserHeader user={item.author} />

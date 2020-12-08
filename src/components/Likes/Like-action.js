@@ -44,7 +44,7 @@ export const fetchLike = (typedispatch) => async (
 
 export const createLike = (typedispatch) => async (
 	dispatch,
-	{ publicationId, userId, total, loading }
+	{ publicationId, user, total, loading }
 ) => {
 	if (loading) return;
 	dispatch({
@@ -53,7 +53,7 @@ export const createLike = (typedispatch) => async (
 	const url = `/likes`;
 	try {
 		const request = await apiMock.post(url, {
-			author: userId,
+			author: { name: user?.name, avatar: user?.avatar, id: user?.id },
 			post: publicationId,
 		});
 		dispatch({
