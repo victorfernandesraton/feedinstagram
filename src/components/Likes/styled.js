@@ -12,14 +12,16 @@ export const LikesViewContainer = styled.View`
 	width: 50%;
 	justify-content: space-evenly;
 	flex-direction: row;
+	align-items: center;
 	margin: 16px 8px;
 `;
 
 export const LinkLabel = styled.Text`
-	font-size: 16;
+	font-size: ${props => props?.scenary === 'feed' ?16 : 12};
 `
 export const LikeLink = styled.Text`
 	margin-left: 8px;
+	font-size: ${props => props?.scenary === 'feed' ?16 : 12};	
 	text-decoration: underline;
 	text-decoration-style: solid;
 `

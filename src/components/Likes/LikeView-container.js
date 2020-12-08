@@ -53,14 +53,14 @@ const LikeView = ({ item, scenary = "feed" }) => {
 				onClick={handleClick}
 				scenary={scenary}
 			/>
-			<LinkLabel>
+			<LinkLabel scenary={scenary}>
 				{total == 0
 					? "Seja o primeiro a curtir"
 					: `${total} ${total > 1 ? "curtidas" : "curtida"}`}
 			</LinkLabel>
 			{total > 0 && (
 				<Link to={`/likes?id=${item.id}`}>
-					<LikeLink>Ver curtidas</LikeLink>
+					<LikeLink scenary={scenary} >Ver curtidas</LikeLink>
 				</Link>
 			)}
 		</LikesViewContainer>
