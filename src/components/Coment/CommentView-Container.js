@@ -11,7 +11,7 @@ import { addComment, fetchPost } from "./Comment-action";
 import { CommentMoreContainer, CommentMoreText } from "./style";
 
 const CommentView = ({ parentId, scenary = "feed" }) => {
-	const { navigate, setOptions } = useNavigation();
+	const { navigate } = useNavigation();
 
 	const [{ data, metadata, loading, called }, dispatch] = useReducer(
 		Reducer,
@@ -48,14 +48,6 @@ const CommentView = ({ parentId, scenary = "feed" }) => {
 			});
 		}
 	}, []);
-
-	useEffect(() => {
-		if (scenary === "single-feed" && total) {
-			setOptions({
-				title: `Comentários - ${total}`,
-			});
-		}
-	}, [scenary, total]);
 
 	return (
 		<>
