@@ -27,12 +27,12 @@ export const Description = styled.Text`
 `;
 
 export const BasicText = styled.Text`
-	font-size: 32;
-	line-height: 32;
+	font-size: 32px;
+	line-height: 32px;
 	color: #333333;
-	padding: 16;
-	padding-top: 16;
-	min-height: 168;
+	padding: 16px;
+	padding-top: 16px;
+	min-height: 168px;
 	border-top-width: 1;
 	border-color: rgba(212, 211, 211, 0.3);
 `;

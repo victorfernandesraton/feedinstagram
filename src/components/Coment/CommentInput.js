@@ -15,7 +15,7 @@ import {
 const CommentInput = ({ parent, onPost, total }) => {
 	const [{ user }] = useLogin();
 	const [content, setContent] = useState("");
-	const [textHeight, setTextHeight] = useState(40);
+	const [textHeight, setTextHeight] = useState('40px');
 	const [{ loading }, dispatch] = useReducer(Reducer, initialState);
 
 	const sendComment = useCallback(
@@ -41,7 +41,7 @@ const CommentInput = ({ parent, onPost, total }) => {
 				multiline
 				height={textHeight}
 				onContentSizeChange={(e) =>
-					setTextHeight(e.nativeEvent.contentSize.height)
+					setTextHeight(`${e.nativeEvent.contentSize.height}px`)
 				}
 				onChangeText={(text) => {
 					setContent(text);

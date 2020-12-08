@@ -56,7 +56,7 @@ const LikeView = ({ item, scenary = "feed" }) => {
 			<LinkLabel scenary={scenary}>
 				{total == 0
 					? "Seja o primeiro a curtir"
-					: `${total} ${total > 1 ? "curtidas" : "curtida"}`}
+					: `${total}`}
 			</LinkLabel>
 			{total > 0 && (
 				<Link to={`/likes?id=${item.id}`}>
